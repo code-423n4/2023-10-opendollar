@@ -54,7 +54,7 @@ Our modifications to the existing GEB framework include the addition of a Non-Fu
 
 ### Files to focus on an approximate number of lines
 
-The Following contracts are where we have created th NFV feature, and where we would like auditors to focus:
+The Following contracts are where we have created the new NFV feature, and where we would like auditors to focus their attention:
 
 - [contracts/proxies/Vault721.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/Vault721.sol)
 - [contracts/proxies/ODSafeManager.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODSafeManager.sol)
@@ -83,7 +83,7 @@ Total: **580 lines**
 
 ## Libraries
 
-All Open Zeppelin imports are from release their `@openzeppelin/contracts` [v4.8.2](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v4.8)
+All Open Zeppelin imports are from `@openzeppelin/contracts` [v4.8.2](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v4.8)
 
 #### Vault721.sol
 
