@@ -21,7 +21,7 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 _Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards._
 
-[ ⭐️ SPONSORS: Are there any known issues or risks deemed acceptable that shouldn't lead to a valid finding? If so, list them here. ]
+- Governor role can update the safeManager address in the NFV, which would break the protocol if ever set incorrectly or maliciously.
 
 # Overview
 
@@ -33,8 +33,6 @@ Open Dollar contracts are built using the [GEB](https://github.com/reflexer-labs
 
 ### Links
 
-- **Previous audits:** N/A
-- **Documentation:** https://docs.opendollar.com/
 - **Website:** https://opendollar.com/
 - **Twitter:** https://twitter.com/open_dollar
 - **Discord:** https://discord.opendollar.com/
@@ -45,18 +43,14 @@ Open Dollar contracts are built using the [GEB](https://github.com/reflexer-labs
 
 Our modifications to the existing GEB framework include the addition of a Non-Fungible Vault (NFV) feature, which ties CDP ownership to a specific NFT, rather than using the traditional account-based ownership for CDPs. This approach creates a new primitive to build additional markets on and opportunities for users. Vaults can be sold through existing NFT marketplaces, automations can sell user vaults to arbitrageurs without having to pay liquidation penalties, and existing NFT infrastructure can be used in new ways. With a more capital efficient market for liquidatable vaults there is less risk when creating leveraged positions.
 
-Some things we expect:
-
-- Only the owner of a particular NFV can ever mint debt against the corresponding vault
-- If NFVs are transfered, so too is the ownership and control of the vault
-- Users must use the ODProxy to interact with their vaults
-
-### Resources
+### Docs & Resources
 
 - Docs: https://docs.opendollar.com/
-- Forge contract docs: https://contracts.opendollar.com
+- Contract docs: https://contracts.opendollar.com
 - Lite Paper: https://www.opendollar.com/lite-paper
 - Protocol Diagram: https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v1?type=design&node-id=0%3A1&mode=design&t=tR5NcHdXGTHys5US-1
+
+![Protocol Diagram](https://github.com/code-423n4/2023-10-opendollar/figma-chart-preview.png)
 
 ### Files to focus on an approximate number of lines
 
@@ -69,7 +63,7 @@ The Following contracts are where we have created th NFV feature, and where we w
 
 # Scope
 
-IMPORTANT: The audit is scoped to the difference between `open-dollar/od-contracts` at [`v.1.5.5-audit`](https://github.com/open-dollar/od-contracts/releases/tag/v1.5.5) and `hai-on-op/core` at [`v0.1.2-rc.3`](https://github.com/hai-on-op/core/releases/tag/v0.1.2-rc.3). For convenience, we created a Pull Request showing these changes: https://github.com/open-dollar/od-contracts/pull/187
+#### IMPORTANT: The audit is scoped to the difference between `open-dollar/od-contracts` at [`v.1.5.5-audit`](https://github.com/open-dollar/od-contracts/releases/tag/v1.5.5) and `hai-on-op/core` at [`v0.1.2-rc.3`](https://github.com/hai-on-op/core/releases/tag/v0.1.2-rc.3). For convenience, we created a Pull Request showing these changes: https://github.com/open-dollar/od-contracts/pull/187
 
 | Contract                                                                                                                                                         | SLOC | Purpose                                                                                                                                                                                                                                                                                                       |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -87,6 +81,41 @@ IMPORTANT: The audit is scoped to the difference between `open-dollar/od-contrac
 
 Total: **580 lines**
 
+## Libraries
+
+All Open Zeppelin imports are from release their `@openzeppelin/contracts` [v4.8.2](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v4.8)
+
+#### Vault721.sol
+
+- openzeppelin ERC721
+- openzeppelin ERC721Enumerable
+
+#### ODSafeManager.sol
+
+- openzeppelin EnumerableSet
+
+#### ODGovernor.sol
+
+- IVotes from @openzeppelin/governance/utils/IVotes
+- IERC165 from @openzeppelin/utils/introspection/IERC165
+- IGovernor from @openzeppelin/governance/IGovernor
+- TimelockController @openzeppelin/governance/TimelockController
+- Governor from @openzeppelin/governance/Governor
+- GovernorSettings from @openzeppelin/governance/extensions/GovernorSettings
+- GovernorCompatibilityBravo from openzeppelin/governance/compatibility/GovernorCompatibilityBravo.sol
+- GovernorVotes from @openzeppelin/governance/extensions/GovernorVotes
+- GovernorVotesQuorumFraction from '@openzeppelin/governance/extensions/GovernorVotesQuorumFraction
+- GovernorTimelockControl from @openzeppelin/governance/extensions/GovernorTimelockControl
+
+#### CamelotRelayer.sol
+
+- openzeppelin IERC20Metadata
+- OracleLibrary from @uniswap/v3-periphery: https://github.com/Uniswap/v3-periphery
+
+#### CamelotRelayerFactory.sol
+
+- EnumerableSet from openzeppelin
+
 ## Out of scope
 
 - `contracts/proxies/actions/GlobalSettlementActions.sol`
@@ -94,10 +123,83 @@ Total: **580 lines**
 - `contracts/for-test/**/*.sol`
 - `contracts/interfaces/**/*.sol`
 - `contracts/libraries/**/*.sol`
+- Tests, scripts, and anything not in `src/contracts`
 
-## Installation and Compilation
+# Additional Context
 
-Clone the OD [Contract repo](https://github.com/open-dollar/od-contracts/tree/v1.5.5-audit)
+### Token Interactions
+
+- ODGovernor should count ERC-20 delegated votes as expected
+- Vault721 should adhere to ERC-721 standard, and token transfers should also transfer the safe ownership as expected
+
+### Blockchain network
+
+Protocol will be deployed to Arbitrum One (ID: 42161)
+
+### Trusted roles
+
+#### ODGovernor
+
+- In Vault721, can call `updateNftRenderer()` to modify the contract used in creating the SVG image for the token URI
+- In Vault721, can call `setSafeManager()` to modify the address for the `ODSafeManager`.
+
+### Standard Implementation
+
+- `Vault721`: Should comply with `ERC721`
+
+## Attack ideas (Where to look for bugs)
+
+1. Create a smart contract that is able to receive an NFV without a proxy being deployed for it by calling transfer in a constructor or other means
+2. Mint debt against an NFV in the same transaction that it is transfered to someone else, allowing the attacker to mislead an NFV buyer about the value of the NFV being bought
+3. Use reentrancy to trick the SafeManager into allowing your modifications to a safe you don't own
+4. Break access control by calling SafeManager directly without using the ODproxy
+
+## Main invariants
+
+1. Only the owner of a particular NFV can ever mint debt against the corresponding safe.
+2. If the ERC-721 token from Vault721 is transfered, so too is the ownership and control of the corresponding safe. Meaning only the owner can transfer it or mint debt against it.
+3. Users must exclusively use the ODProxy to interact with their safes.
+4. When a fresh account, which has never interacted with the protocol, receives an NFV via ERC721 transfer, an ODProxy should always be deployed for them.
+5. ODProxy's can not be transfered or change owner.
+6. There is 1 safe for each ERC-721 token, and their IDs always correspond.
+7. Proper Access Control ensures that transferring safes can only be initiated at the Vault721 .
+8. A user only ever has a single ODProxy deployed for them.
+9. Only the governor role can set an external Renderer contract for the NFV's URI.
+
+## Scoping Details
+
+```
+- If you have a public code repo, please share it here:
+- How many contracts are in scope?:   11
+- Total SLoC for these contracts?:  580
+- How many external imports are there?: 3
+- How many separate interfaces and struct definitions are there for the contracts within scope?:  13
+- Does most of your code generally use composition or inheritance?:  Composition
+- How many external calls?:  0
+- What is the overall line coverage percentage provided by your tests?: 95%
+- Is this an upgrade of an existing system?: True;
+  - 1. Created a custom proxy (ODProxy) for user interactions
+  - 2. The Proxy Registry is now an NFT Vault (Vault721.sol)
+  - 3. Users can interact with their safe via NFT
+  - 4. Safe transfers now also transfer the ownership NFT and vice versa
+  - 5. Naming has changed and custom logic around using the NFT has been added
+- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): NFT, Uses L2, ERC-20 Token
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:  False
+- Please describe required context:   n/a
+- Does it use an oracle?:  No
+- Describe any novel or unique curve logic or mathematical models your code uses:
+- Is this either a fork of or an alternate implementation of another project?:   True
+- Does it use a side-chain?: Yes, Arbitrum
+- Describe any specific areas you would like addressed:
+```
+
+# Tests
+
+Clone [`open-dollar/od-contract`](https://github.com/open-dollar/od-contracts)
+
+```bash
+git clone git@github.com:open-dollar/od-contracts.git
+```
 
 ⚠️ IMPORTANT: Switch to the tag `v1.5.5-audit`. This is the specific release which is in-scope for the audit.
 
@@ -125,62 +227,3 @@ Deploy using Anvil:
 ```bash
 yarn deploy:anvil
 ```
-
-# Additional Context
-
-### Token Interactions
-
-ERC-721 transfers, approvals, etc..
-
-- [ ] Please list specific ERC721 that your protocol is anticipated to interact with.
-- [ ] Which blockchains will this code be deployed to, and are considered in scope for this audit?
-- [ ] Please list all trusted roles (e.g. operators, slashers, pausers, etc.), the privileges they hold, and any conditions under which privilege escalation is expected/allowable
-- [ ] In the event of a DOS, could you outline a minimum duration after which you would consider a finding to be valid? This question is asked in the context of most systems' capacity to handle DoS attacks gracefully for a certain period.
-- [ ] Is any part of your implementation intended to conform to any EIP's? If yes, please list the contracts in this format:
-  - `Contract1`: Should comply with `ERC/EIPX`
-  - `Contract2`: Should comply with `ERC/EIPY`
-
-## Attack ideas (Where to look for bugs)
-
-_List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example_
-
-## Main invariants
-
-_Describe the project's main invariants (properties that should NEVER EVER be broken)._
-
-## Scoping Details
-
-[ ⭐️ SPONSORS: please confirm/edit the information below. ]
-
-```
-- If you have a public code repo, please share it here:
-- How many contracts are in scope?:   13
-- Total SLoC for these contracts?:  616
-- How many external imports are there?: 3
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  13
-- Does most of your code generally use composition or inheritance?:  Composition
-- How many external calls?:  0
-- What is the overall line coverage percentage provided by your tests?: 95%
-- Is this an upgrade of an existing system?: True;
-  - 1. Created a custom proxy (ODProxy) for user interactions
-  - 2. The Proxy Registry is now an NFT Vault (Vault721.sol)
-  - 3. Users can interact with their safe via NFT
-  - 4. Safe transfers now also transfer the ownership NFT and vice versa
-  - 5. Naming has changed and custom logic around using the NFT has been added
-- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): NFT, Uses L2, ERC-20 Token
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:  False
-- Please describe required context:   n/a
-- Does it use an oracle?:  No
-- Describe any novel or unique curve logic or mathematical models your code uses:
-- Is this either a fork of or an alternate implementation of another project?:   True
-- Does it use a side-chain?: Yes, Arbitrum
-- Describe any specific areas you would like addressed:
-```
-
-Accounts should not be able to get an NFV without a proxy being deployed for them.
-
-# Tests
-
-_Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report._
-
-_Note: Many wardens run Slither as a first pass for testing. Please document any known errors with no workaround._
