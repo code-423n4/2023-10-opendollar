@@ -12,31 +12,39 @@ Ultimately, when we launch the audit, this repo will be made public and will con
 Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the audit sponsor (⭐️)**.
 
 ### Installation and Compilation of Open Dollar contracts
+
 Clone the `v1.5.5-audit` release of the OD [Contract repo](https://github.com/open-dollar/od-contracts/tree/v1.5.5-audit).
 
 Install dependencies:
+
 ```bash
 yarn
 ```
+
 Compile the repo or run tests with foundry:
+
 ```bash
 yarn build
 ```
 
 ## How Open Dollar works
+
 Open Dollar is a GEB style stablecoin with CDPs. Our main changes, and what this audit covers, is the addition of new proxies and a Non-Fungible Vault (NFV) system where debt and collateral are owned by NFTs instead of being tied to accounts.
 
 Some things we expect:
+
 - Only the owner of a particular NFV can ever mint debt against the corresponding vault
 - If NFVs are transfered, so too is the ownership and control of the vault
 - Users must use the ODProxy to interact with their vaults
 
 ### Other docs
+
 https://docs.opendollar.com/
 https://www.opendollar.com/lite-paper
 Diagram: https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v1?type=design&node-id=0%3A1&mode=design&t=tR5NcHdXGTHys5US-1
 
 ### Files to focus on an approximate number of lines
+
 34 AccountingEngine
 21 CamelotRelayerChild
 37 CamelotRelayerFactory
@@ -112,27 +120,19 @@ _Note for C4 wardens: Anything included in the automated findings output is cons
 
 # Overview
 
-Open Dollar is a floating $1.00 pegged stablecoin backed by Liquid Staking Tokens with NFT controlled vaults. Built for Arbitrum. As the majority of the codebase is built with (the already audited) GEB framework, the focus of this one is to review the major changes Open Dollar has made to the framework around proxies, vaults, the safe manager, and 
+Open Dollar is a floating $1.00 pegged stablecoin backed by Liquid Staking Tokens with NFT controlled vaults. Built for Arbitrum. As the majority of the codebase is built with (the already audited) GEB framework, the focus of this one is to review the major changes Open Dollar has made to the framework around proxies, vaults, the safe manager, and
 
 ### Non Fungible Vaults (NFV)
+
 Unlike traditional Collateralized Debt Positions (CDPs), where ownership is tied to an account, NFVs uniquely associate ownership of the collateralized assets with NFTs. This approach creates a new primitive to build additional markets on and opportunities for users. Vaults can be sold through existing NFT marketplaces, automations can sell user vaults to arbitrageurs without having to pay liquidation penalties, and existing NFT infrastructure can be used in new ways. With a more capital efficient market for liquidatable vaults there is less risk when creating leveraged positions.
 
 ## Links
 
-<<<<<<< Updated upstream
 - **Previous audits:** N/A
 - **Documentation:** https://docs.opendollar.com/
 - **Website:** https://opendollar.com/
 - **Twitter:** https://twitter.com/open_dollar
 - **Discord:** https://discord.opendollar.com/
-
-=======
-- **Previous audits:**
-- **Documentation:**
-- **Website:**
-- **Twitter:**
-- **Discord:**
->>>>>>> Stashed changes
 
 # Scope
 
@@ -168,6 +168,7 @@ _List any files/contracts that are out of scope for this audit._
 # Additional Context
 
 ### Token Interactions
+
 ERC-721 transfers, approvals, etc..
 
 - [ ] Please list specific ERC721 that your protocol is anticipated to interact with.
