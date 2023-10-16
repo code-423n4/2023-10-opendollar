@@ -10,16 +10,59 @@ Ultimately, when we launch the audit, this repo will be made public and will con
 
 Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the audit sponsor (⭐️)**.
 
+### Installation and Compilation of Open Dollar contracts
+Clone the `v1.5.5-audit` release of the OD [Contract repo](https://github.com/open-dollar/od-contracts/tree/v1.5.5-audit).
+
+Install dependencies:
+```bash
+yarn
+```
+Compile the repo or run tests with foundry:
+```bash
+yarn build
+```
+
+## How Open Dollar works
+Open Dollar is a GEB style stablecoin with CDPs. Our main changes, and what this audit covers, is the addition of new proxies and a Non-Fungible Vault (NFV) system where debt and collateral are owned by NFTs instead of being tied to accounts.
+
+Some things we expect:
+- Only the owner of a particular NFV can ever mint debt against the corresponding vault
+- If NFVs are transfered, so too is the ownership and control of the vault
+- Users must use the ODProxy to interact with their vaults
+
+### Other docs
+https://docs.opendollar.com/
+https://www.opendollar.com/lite-paper
+Diagram: https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v1?type=design&node-id=0%3A1&mode=design&t=tR5NcHdXGTHys5US-1
+
+### Files to focus on an approximate number of lines
+34 AccountingEngine
+21 CamelotRelayerChild
+37 CamelotRelayerFactory
+144 ODGovernor
+106 CamelotRelayer
+2 UniV3Relayer
+341 NFTRenderer
+36 ODProxy
+14 ODSafeManager
+1 SAFEHandler
+200 Vault721
+19 BasiActions
+2 GlobalSettlementActions
+
 ---
 # Repo setup
 
 ## ⭐️ Sponsor: Add code to this repo
 
-- [ ] Create a PR to this repo with the below changes:
-- [ ] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
+There are also end to end tests and coverage tests that go through more files than are part of this audit.
+Check out the [package.json](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/package.json) file for a list of helpful commands.
+
+- [x] Create a PR to this repo with the below changes:
+- [x] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
+- [x] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
 - [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 48 business hours prior to audit start time.**
-- [ ] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
+- [x] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
 
 
 ---
