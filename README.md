@@ -1,98 +1,3 @@
-# ✨ So you want to run an audit
-
-This `README.md` contains a set of checklists for our audit collaboration.
-
-Your audit will use two repos:
-
-- **an _audit_ repo** (this one), which is used for scoping your audit and for providing information to wardens
-- **a _findings_ repo**, where issues are submitted (shared with you after the audit)
-
-Ultimately, when we launch the audit, this repo will be made public and will contain the smart contracts to be reviewed and all the information needed for audit participants. The findings repo will be made public after the audit report is published and your team has mitigated the identified issues.
-
-Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the audit sponsor (⭐️)**.
-
-### Installation and Compilation of Open Dollar contracts
-
-Clone the `v1.5.5-audit` release of the OD [Contract repo](https://github.com/open-dollar/od-contracts/tree/v1.5.5-audit).
-
-Install dependencies:
-
-```bash
-yarn
-```
-
-Compile the repo or run tests with foundry:
-
-```bash
-yarn build
-```
-
-## How Open Dollar works
-
-Open Dollar is a GEB style stablecoin with CDPs. Our main changes, and what this audit covers, is the addition of new proxies and a Non-Fungible Vault (NFV) system where debt and collateral are owned by NFTs instead of being tied to accounts.
-
-Some things we expect:
-
-- Only the owner of a particular NFV can ever mint debt against the corresponding vault
-- If NFVs are transfered, so too is the ownership and control of the vault
-- Users must use the ODProxy to interact with their vaults
-
-### Other docs
-
-https://docs.opendollar.com/
-https://www.opendollar.com/lite-paper
-Diagram: https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v1?type=design&node-id=0%3A1&mode=design&t=tR5NcHdXGTHys5US-1
-
-### Files to focus on an approximate number of lines
-
-34 AccountingEngine
-21 CamelotRelayerChild
-37 CamelotRelayerFactory
-144 ODGovernor
-106 CamelotRelayer
-2 UniV3Relayer
-36 ODProxy
-14 ODSafeManager
-1 SAFEHandler
-200 Vault721
-19 BasiActions
-2 GlobalSettlementActions
-
----
-
-# Repo setup
-
-## ⭐️ Sponsor: Add code to this repo
-
-There are also end to end tests and coverage tests that go through more files than are part of this audit.
-Check out the [package.json](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/package.json) file for a list of helpful commands.
-
-- [x] Create a PR to this repo with the below changes:
-- [x] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [x] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 48 business hours prior to audit start time.**
-- [x] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
-
----
-
-## ⭐️ Sponsor: Edit this `README.md` file
-
-- [ ] Modify the contents of this `README.md` file. Describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2022-08-foundation#readme))
-- [ ] Review the Gas award pool amount. This can be adjusted up or down, based on your preference - just flag it for Code4rena staff so we can update the pool totals across all comms channels.
-- [ ] Optional / nice to have: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] [This checklist in Notion](https://code4rena.notion.site/Key-info-for-Code4rena-sponsors-f60764c4c4574bbf8e7a6dbd72cc49b4#0cafa01e6201462e9f78677a39e09746) provides some best practices for Code4rena audits.
-
-## ⭐️ Sponsor: Final touches
-
-- [ ] Review and confirm the details in the section titled "Scoping details" and alert Code4rena staff of any changes.
-- [ ] Check that images and other files used in this README have been uploaded to the repo as a file and then linked in the README using absolute path (e.g. `https://github.com/code-423n4/yourrepo-url/filepath.png`)
-- [ ] Ensure that _all_ links and image/file paths in this README use absolute paths, not relative paths
-- [ ] Check that all README information is in markdown format (HTML does not render on Code4rena.com)
-- [ ] Remove any part of this template that's not relevant to the final version of the README (e.g. instructions in brackets and italic)
-- [ ] Delete this checklist and all text above the line below when you're ready.
-
----
-
 # Open Dollar audit details
 
 - Total Prize Pool: $36,500 USDC (Notion: Total award pool)
@@ -100,7 +5,7 @@ Check out the [package.json](https://github.com/open-dollar/od-contracts/blob/v1
   - Analysis awards: $1,500 USDC (Notion: Analysis pool)
   - QA awards: $750 USDC (Notion: QA pool)
   - Bot Race awards: $2,250 USDC (Notion: Bot Race pool)
-  - Gas awards: $750 USDC (Notion: Gas pool)
+  - Gas awards: $250 USDC (Notion: Gas pool)
   - Judge awards: $3,600 USDC (Notion: Judge Fee)
   - Lookout awards: $2,400 USDC (Notion: Sum of Pre-sort fee + Pre-sort early bonus)
   - Scout awards: $500 USDC (Notion: Scout fee - but usually $500 USDC)
@@ -120,13 +25,13 @@ _Note for C4 wardens: Anything included in the automated findings output is cons
 
 # Overview
 
-Open Dollar is a floating $1.00 pegged stablecoin backed by Liquid Staking Tokens with NFT controlled vaults. Built for Arbitrum. As the majority of the codebase is built with (the already audited) GEB framework, the focus of this one is to review the major changes Open Dollar has made to the framework around proxies, vaults, the safe manager, and
+## About
 
-### Non Fungible Vaults (NFV)
+Open Dollar is a floating $1.00 pegged stablecoin backed by Liquid Staking Tokens with NFT controlled vaults. Built specifically for Arbitrum. As the majority of the codebase is built with (the already audited) GEB framework, the focus of this one is to review the major changes Open Dollar has made to the framework around proxies, vaults, and the safe manager.
 
-Unlike traditional Collateralized Debt Positions (CDPs), where ownership is tied to an account, NFVs uniquely associate ownership of the collateralized assets with NFTs. This approach creates a new primitive to build additional markets on and opportunities for users. Vaults can be sold through existing NFT marketplaces, automations can sell user vaults to arbitrageurs without having to pay liquidation penalties, and existing NFT infrastructure can be used in new ways. With a more capital efficient market for liquidatable vaults there is less risk when creating leveraged positions.
+Open Dollar contracts are built using the [GEB](https://github.com/reflexer-labs/geb) framework, which uses Collateralized Debt Positions (CDPs) to allow accounts to generate debt against deposited collateral.
 
-## Links
+### Links
 
 - **Previous audits:** N/A
 - **Documentation:** https://docs.opendollar.com/
@@ -134,36 +39,92 @@ Unlike traditional Collateralized Debt Positions (CDPs), where ownership is tied
 - **Twitter:** https://twitter.com/open_dollar
 - **Discord:** https://discord.opendollar.com/
 
+### Non Fungible Vaults (NFV)
+
+> NOTE: The terms "CDP", "vault", and "safe" are used interchangeably here. They all refer to a collateralized debt-position in the protocol.
+
+Our modifications to the existing GEB framework include the addition of a Non-Fungible Vault (NFV) feature, which ties CDP ownership to a specific NFT, rather than using the traditional account-based ownership for CDPs. This approach creates a new primitive to build additional markets on and opportunities for users. Vaults can be sold through existing NFT marketplaces, automations can sell user vaults to arbitrageurs without having to pay liquidation penalties, and existing NFT infrastructure can be used in new ways. With a more capital efficient market for liquidatable vaults there is less risk when creating leveraged positions.
+
+Some things we expect:
+
+- Only the owner of a particular NFV can ever mint debt against the corresponding vault
+- If NFVs are transfered, so too is the ownership and control of the vault
+- Users must use the ODProxy to interact with their vaults
+
+### Resources
+
+- Docs: https://docs.opendollar.com/
+- Forge contract docs: https://contracts.opendollar.com
+- Lite Paper: https://www.opendollar.com/lite-paper
+- Protocol Diagram: https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v1?type=design&node-id=0%3A1&mode=design&t=tR5NcHdXGTHys5US-1
+
+### Files to focus on an approximate number of lines
+
+The Following contracts are where we have created th NFV feature, and where we would like auditors to focus:
+
+- [contracts/proxies/Vault721.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/Vault721.sol)
+- [contracts/proxies/ODSafeManager.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODSafeManager.sol)
+- [contracts/proxies/ODProxy.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODProxy.sol)
+- [contracts/proxies/SAFEHandler.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/SAFEHandler.sol)
+
 # Scope
 
-[ ⭐️ SPONSORS: add scoping and technical details here ]
+IMPORTANT: The audit is scoped to the difference between `open-dollar/od-contracts` at [`v.1.5.5-audit`](https://github.com/open-dollar/od-contracts/releases/tag/v1.5.5) and `hai-on-op/core` at [`v0.1.2-rc.3`](https://github.com/hai-on-op/core/releases/tag/v0.1.2-rc.3). For convenience, we created a Pull Request showing these changes: https://github.com/open-dollar/od-contracts/pull/187
 
-- [ ] In the table format shown below, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each _For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc)._
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
+| Contract                                                                                                                                                         | SLOC | Purpose                                                                                                                                                                                                                                                                                                       |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [contracts/AccountingEngine.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/AccountingEngine.sol)                               | 24   | The AccountingEngine receives both system surplus and system debt. It covers deficits via debt auctions and disposes off surplus via auctions or transfers (to extraSurplusReceiver)                                                                                                                          |
+| [contracts/oracles/CamelotRelayer.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/oracles/CamelotRelayer.sol)                   | 47   | Used by Oracle Relayer to fetch the current market price of the system coin (OD) using a [Camelot](https://camelot.exchange) pool on Arbitrum network                                                                                                                                                         |
+| [contracts/factories/CamelotRelayerFactory.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/factories/CamelotRelayerFactory.sol) | 17   |                                                                                                                                                                                                                                                                                                               |
+| [contracts/factories/CamelotRelayerChild.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/factories/CamelotRelayerChild.sol)     | 8    |                                                                                                                                                                                                                                                                                                               |
+| [contracts/oracles/UniV3Relayer.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/oracles/UniV3Relayer.sol)                       | 45   | Potential alternative option to using CamelotRelayer.sol. Used by Oracle Relayer to fetch the current market price of the system coin (OD) using a Uniswap V3 pool on Arbitrum network                                                                                                                        |
+| [contracts/gov/ODGovernor.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/gov/ODGovernor.sol)                                   | 51   | The DAO-managed contract which can modify protocol parameters, eg. add new collateral types and change PID settings                                                                                                                                                                                           |
+| [contracts/proxies/ODProxy.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODProxy.sol)                                 | 17   | A more restrictive version of the DSProxy used by Maker Protocol, where the owner cannot be changed. The purpose of this is to ensure that only the Vault721 contract has the ability to transfer a safe.                                                                                                     |
+| [contracts/proxies/Vault721.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/Vault721.sol)                               | 84   | Serves as the Proxy Registry, Proxy Factory, and the ERC721 "Non-fungible Vault". Manages all safe ownership, transfers, and approvals via the ERC721 standard. Tracks proxy ownership and deploys new proxies- when called directly, or when a safe is transfered to an account which does not have a proxy. |
+| [contracts/proxies/SAFEHandler.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/SAFEHandler.sol)                         | 5    | Grants permission to the ODSafeManager to make modifications to a safe. A new SAFEHandler is deployed for each safe, whose address serves as a unique identifier within the SAFEEngine.                                                                                                                       |
+| [contracts/proxies/ODSafeManager.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODSafeManager.sol)                     | 138  | A more restrictive Safe Manager, which only allows the Vault721 contract to move a safe. Also calls Vault721 mint when a new safe is created.                                                                                                                                                                 |
+| [contracts/proxies/actions/BasicActions.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/actions/BasicActions.sol)       | 144  |
 
-_List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus._
-
-For a list of the contract changes see https://github.com/open-dollar/od-contracts/pull/187/files#diff-bb1cf8566cc10260fd489e806d99451079dd676f1171ab84c3930f1ee8cd82e5
-
-| Contract                                                                                                                                                                         | SLOC | Purpose                                                                                                                                                                                                                                                                                                       | Libraries used |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| [contracts/AccountingEngine.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/AccountingEngine.sol)                                               | 34   | The AccountingEngine receives both system surplus and system debt. It covers deficits via debt auctions and disposes off surplus via auctions or transfers (to extraSurplusReceiver)                                                                                                                          |                |
-| [contracts/oracles/CamelotRelayer.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/oracles/CamelotRelayer.sol)                                   | 106  | Used by Oracle Relayer to fetch the current market price of the system coin (OD) using a [Camelot](https://camelot.exchange) pool on Arbitrum network                                                                                                                                                         |                |
-| [contracts/factories/CamelotRelayerFactory.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/factories/CamelotRelayerFactory.sol)                 | 37   |                                                                                                                                                                                                                                                                                                               |                |
-| [contracts/factories/CamelotRelayerChild.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/factories/CamelotRelayerChild.sol)                     | 21   |                                                                                                                                                                                                                                                                                                               |                |
-| [contracts/oracles/UniV3Relayer.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/oracles/UniV3Relayer.sol)                                       | 2    | Potential alternative option to using CamelotRelayer.sol. Used by Oracle Relayer to fetch the current market price of the system coin (OD) using a Uniswap V3 pool on Arbitrum network                                                                                                                        |                |
-| [contracts/gov/ODGovernor.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/gov/ODGovernor.sol)                                                   | 144  | The DAO-managed contract which can modify protocol parameters, eg. add new collateral types and change PID settings                                                                                                                                                                                           |                |
-| [contracts/proxies/ODProxy.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODProxy.sol)                                                 | 36   | A more restrictive version of the DSProxy used by Maker Protocol, where the owner cannot be changed. The purpose of this is to ensure that only the Vault721 contract has the ability to transfer a safe.                                                                                                     |                |
-| [contracts/proxies/Vault721.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/Vault721.sol)                                               | 200  | Serves as the Proxy Registry, Proxy Factory, and the ERC721 "Non-fungible Vault". Manages all safe ownership, transfers, and approvals via the ERC721 standard. Tracks proxy ownership and deploys new proxies- when called directly, or when a safe is transfered to an account which does not have a proxy. |                |
-| [contracts/proxies/ODSafeManager.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODSafeManager.sol)                                     | 14   | A more restrictive Safe Manager, which only allows the Vault721 contract to move a safe. Also calls Vault721 mint when a new safe is created.                                                                                                                                                                 |                |
-| [contracts/proxies/actions/BasicActions.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/actions/BasicActions.sol)                       | 19   | XYZ                                                                                                                                                                                                                                                                                                           |                |
-| [contracts/proxies/actions/GlobalSettlementActions.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/actions/GlobalSettlementActions.sol) | 2    | XYZ                                                                                                                                                                                                                                                                                                           |                |
+Total: **580 lines**
 
 ## Out of scope
 
-_List any files/contracts that are out of scope for this audit._
+- `contracts/proxies/actions/GlobalSettlementActions.sol`
+- `contracts/proxies/actions/RewardedActions.sol`
+- `contracts/for-test/**/*.sol`
+- `contracts/interfaces/**/*.sol`
+- `contracts/libraries/**/*.sol`
+
+## Installation and Compilation
+
+Clone the OD [Contract repo](https://github.com/open-dollar/od-contracts/tree/v1.5.5-audit)
+
+⚠️ IMPORTANT: Switch to the tag `v1.5.5-audit`. This is the specific release which is in-scope for the audit.
+
+```bash
+git checkout v1.5.5-audit
+```
+
+Install dependencies and compile
+
+```bash
+yarn
+
+yarn build
+```
+
+Run tests with foundry:
+
+```bash
+yarn test
+yarn test:e2e
+```
+
+Deploy using Anvil:
+
+```bash
+yarn deploy:anvil
+```
 
 # Additional Context
 
