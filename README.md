@@ -110,11 +110,14 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 # Overview
 
-[ ⭐️ SPONSORS: add info here ]
+Open Dollar is a floating $1.00 pegged stablecoin backed by Liquid Staking Tokens with NFT controlled vaults. Built for Arbitrum. As the majority of the codebase is built with (the already audited) GEB framework, the focus of this one is to review the major changes Open Dollar has made to the framework around proxies, vaults, the safe manager, and 
+
+### Non Fungible Vaults (NFV)
+Unlike traditional Collateralized Debt Positions (CDPs), where ownership is tied to an account, NFVs uniquely associate ownership of the collateralized assets with NFTs. This approach creates a new primitive to build additional markets on and opportunities for users. Vaults can be sold through existing NFT marketplaces, automations can sell user vaults to arbitrageurs without having to pay liquidation penalties, and existing NFT infrastructure can be used in new ways. With a more capital efficient market for liquidatable vaults there is less risk when creating leveraged positions.
 
 ## Links
 
-- **Previous audits:** 
+- **Previous audits:** N/A
 - **Documentation:** https://docs.opendollar.com/
 - **Website:** https://opendollar.com/
 - **Twitter:** https://twitter.com/open_dollar
@@ -142,8 +145,9 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 # Additional Context
 
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Please list specific ERC20 that your protocol is anticipated to interact with. Could be "any" (literally anything, fee on transfer tokens, ERC777 tokens and so forth) or a list of tokens you envision using on launch.
+### Token Interactions
+ERC-721 transfers, approvals, etc..
+
 - [ ] Please list specific ERC721 that your protocol is anticipated to interact with.
 - [ ] Which blockchains will this code be deployed to, and are considered in scope for this audit?
 - [ ] Please list all trusted roles (e.g. operators, slashers, pausers, etc.), the privileges they hold, and any conditions under which privilege escalation is expected/allowable
@@ -185,6 +189,8 @@ Automated findings output for the audit can be found [here](https://github.com/c
 - Does it use a side-chain?: Yes, Arbitrum
 - Describe any specific areas you would like addressed:
 ```
+
+Accounts should not be able to get an NFV without a proxy being deployed for them.
 
 # Tests
 
