@@ -2,9 +2,10 @@
 
 This `README.md` contains a set of checklists for our audit collaboration.
 
-Your audit will use two repos: 
+Your audit will use two repos:
+
 - **an _audit_ repo** (this one), which is used for scoping your audit and for providing information to wardens
-- **a _findings_ repo**, where issues are submitted (shared with you after the audit) 
+- **a _findings_ repo**, where issues are submitted (shared with you after the audit)
 
 Ultimately, when we launch the audit, this repo will be made public and will contain the smart contracts to be reviewed and all the information needed for audit participants. The findings repo will be made public after the audit report is published and your team has mitigated the identified issues.
 
@@ -50,6 +51,7 @@ Diagram: https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v
 2 GlobalSettlementActions
 
 ---
+
 # Repo setup
 
 ## ⭐️ Sponsor: Add code to this repo
@@ -63,7 +65,6 @@ Check out the [package.json](https://github.com/open-dollar/od-contracts/blob/v1
 - [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 48 business hours prior to audit start time.**
 - [x] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
 
-
 ---
 
 ## ⭐️ Sponsor: Edit this `README.md` file
@@ -74,9 +75,10 @@ Check out the [package.json](https://github.com/open-dollar/od-contracts/blob/v1
 - [ ] [This checklist in Notion](https://code4rena.notion.site/Key-info-for-Code4rena-sponsors-f60764c4c4574bbf8e7a6dbd72cc49b4#0cafa01e6201462e9f78677a39e09746) provides some best practices for Code4rena audits.
 
 ## ⭐️ Sponsor: Final touches
+
 - [ ] Review and confirm the details in the section titled "Scoping details" and alert Code4rena staff of any changes.
 - [ ] Check that images and other files used in this README have been uploaded to the repo as a file and then linked in the README using absolute path (e.g. `https://github.com/code-423n4/yourrepo-url/filepath.png`)
-- [ ] Ensure that *all* links and image/file paths in this README use absolute paths, not relative paths
+- [ ] Ensure that _all_ links and image/file paths in this README use absolute paths, not relative paths
 - [ ] Check that all README information is in markdown format (HTML does not render on Code4rena.com)
 - [ ] Remove any part of this template that's not relevant to the final version of the README (e.g. instructions in brackets and italic)
 - [ ] Delete this checklist and all text above the line below when you're ready.
@@ -84,6 +86,7 @@ Check out the [package.json](https://github.com/open-dollar/od-contracts/blob/v1
 ---
 
 # Open Dollar audit details
+
 - Total Prize Pool: $36,500 USDC (Notion: Total award pool)
   - HM awards: $24,750 USDC (Notion: HM (main) pool)
   - Analysis awards: $1,500 USDC (Notion: Analysis pool)
@@ -96,17 +99,16 @@ Check out the [package.json](https://github.com/open-dollar/od-contracts/blob/v1
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2023-10-opendollar/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts October 18, 2023 20:00 UTC 
-- Ends October 25, 2023 20:00 UTC 
+- Starts October 18, 2023 20:00 UTC
+- Ends October 25, 2023 20:00 UTC
 
 ## Automated Findings / Publicly Known Issues
 
 Automated findings output for the audit can be found [here](https://github.com/code-423n4/2023-10-opendollar/blob/main/bot-report.md) within 24 hours of audit opening.
 
-*Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
+_Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards._
 
 [ ⭐️ SPONSORS: Are there any known issues or risks deemed acceptable that shouldn't lead to a valid finding? If so, list them here. ]
-
 
 # Overview
 
@@ -117,31 +119,51 @@ Unlike traditional Collateralized Debt Positions (CDPs), where ownership is tied
 
 ## Links
 
+<<<<<<< Updated upstream
 - **Previous audits:** N/A
 - **Documentation:** https://docs.opendollar.com/
 - **Website:** https://opendollar.com/
 - **Twitter:** https://twitter.com/open_dollar
 - **Discord:** https://discord.opendollar.com/
 
+=======
+- **Previous audits:**
+- **Documentation:**
+- **Website:**
+- **Twitter:**
+- **Discord:**
+>>>>>>> Stashed changes
 
 # Scope
 
 [ ⭐️ SPONSORS: add scoping and technical details here ]
 
 - [ ] In the table format shown below, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each *For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc).* 
+  - [ ] source lines of code (excluding blank lines and comments) in each _For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc)._
   - [ ] external contracts called in each
   - [ ] libraries used in each
 
-*List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus.*
+_List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus._
 
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+For a list of the contract changes see https://github.com/open-dollar/od-contracts/pull/187/files#diff-bb1cf8566cc10260fd489e806d99451079dd676f1171ab84c3930f1ee8cd82e5
+
+| Contract                                                                                                                                                                         | SLOC | Purpose                                                                                                                                                                                                                                                                                                       | Libraries used |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| [contracts/AccountingEngine.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/AccountingEngine.sol)                                               | 34   | The AccountingEngine receives both system surplus and system debt. It covers deficits via debt auctions and disposes off surplus via auctions or transfers (to extraSurplusReceiver)                                                                                                                          |                |
+| [contracts/oracles/CamelotRelayer.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/oracles/CamelotRelayer.sol)                                   | 106  | Used by Oracle Relayer to fetch the current market price of the system coin (OD) using a [Camelot](https://camelot.exchange) pool on Arbitrum network                                                                                                                                                         |                |
+| [contracts/factories/CamelotRelayerFactory.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/factories/CamelotRelayerFactory.sol)                 | 37   |                                                                                                                                                                                                                                                                                                               |                |
+| [contracts/factories/CamelotRelayerChild.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/factories/CamelotRelayerChild.sol)                     | 21   |                                                                                                                                                                                                                                                                                                               |                |
+| [contracts/oracles/UniV3Relayer.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/oracles/UniV3Relayer.sol)                                       | 2    | Potential alternative option to using CamelotRelayer.sol. Used by Oracle Relayer to fetch the current market price of the system coin (OD) using a Uniswap V3 pool on Arbitrum network                                                                                                                        |                |
+| [contracts/gov/ODGovernor.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/gov/ODGovernor.sol)                                                   | 144  | The DAO-managed contract which can modify protocol parameters, eg. add new collateral types and change PID settings                                                                                                                                                                                           |                |
+| [contracts/proxies/ODProxy.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODProxy.sol)                                                 | 36   | A more restrictive version of the DSProxy used by Maker Protocol, where the owner cannot be changed. The purpose of this is to ensure that only the Vault721 contract has the ability to transfer a safe.                                                                                                     |                |
+| [contracts/proxies/Vault721.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/Vault721.sol)                                               | 200  | Serves as the Proxy Registry, Proxy Factory, and the ERC721 "Non-fungible Vault". Manages all safe ownership, transfers, and approvals via the ERC721 standard. Tracks proxy ownership and deploys new proxies- when called directly, or when a safe is transfered to an account which does not have a proxy. |                |
+| [contracts/proxies/ODSafeManager.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODSafeManager.sol)                                     | 14   | A more restrictive Safe Manager, which only allows the Vault721 contract to move a safe. Also calls Vault721 mint when a new safe is created.                                                                                                                                                                 |                |
+| [contracts/proxies/actions/BasicActions.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/actions/BasicActions.sol)                       | 19   | XYZ                                                                                                                                                                                                                                                                                                           |                |
+| [contracts/proxies/actions/GlobalSettlementActions.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/actions/GlobalSettlementActions.sol) | 2    | XYZ                                                                                                                                                                                                                                                                                                           |                |
 
 ## Out of scope
 
-*List any files/contracts that are out of scope for this audit.*
+_List any files/contracts that are out of scope for this audit._
 
 # Additional Context
 
@@ -152,39 +174,42 @@ ERC-721 transfers, approvals, etc..
 - [ ] Which blockchains will this code be deployed to, and are considered in scope for this audit?
 - [ ] Please list all trusted roles (e.g. operators, slashers, pausers, etc.), the privileges they hold, and any conditions under which privilege escalation is expected/allowable
 - [ ] In the event of a DOS, could you outline a minimum duration after which you would consider a finding to be valid? This question is asked in the context of most systems' capacity to handle DoS attacks gracefully for a certain period.
-- [ ] Is any part of your implementation intended to conform to any EIP's? If yes, please list the contracts in this format: 
+- [ ] Is any part of your implementation intended to conform to any EIP's? If yes, please list the contracts in this format:
   - `Contract1`: Should comply with `ERC/EIPX`
   - `Contract2`: Should comply with `ERC/EIPY`
 
 ## Attack ideas (Where to look for bugs)
-*List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example*
+
+_List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example_
 
 ## Main invariants
-*Describe the project's main invariants (properties that should NEVER EVER be broken).*
 
-## Scoping Details 
+_Describe the project's main invariants (properties that should NEVER EVER be broken)._
+
+## Scoping Details
+
 [ ⭐️ SPONSORS: please confirm/edit the information below. ]
 
 ```
-- If you have a public code repo, please share it here:  
+- If you have a public code repo, please share it here:
 - How many contracts are in scope?:   13
 - Total SLoC for these contracts?:  616
-- How many external imports are there?: 3  
+- How many external imports are there?: 3
 - How many separate interfaces and struct definitions are there for the contracts within scope?:  13
-- Does most of your code generally use composition or inheritance?:  Composition 
-- How many external calls?:  0 
+- Does most of your code generally use composition or inheritance?:  Composition
+- How many external calls?:  0
 - What is the overall line coverage percentage provided by your tests?: 95%
 - Is this an upgrade of an existing system?: True;
   - 1. Created a custom proxy (ODProxy) for user interactions
-  - 2. The Proxy Registry is now an NFT Vault (Vault721.sol) 
+  - 2. The Proxy Registry is now an NFT Vault (Vault721.sol)
   - 3. Users can interact with their safe via NFT
   - 4. Safe transfers now also transfer the ownership NFT and vice versa
   - 5. Naming has changed and custom logic around using the NFT has been added
-- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): NFT, Uses L2, ERC-20 Token 
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:  False 
+- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): NFT, Uses L2, ERC-20 Token
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:  False
 - Please describe required context:   n/a
 - Does it use an oracle?:  No
-- Describe any novel or unique curve logic or mathematical models your code uses: 
+- Describe any novel or unique curve logic or mathematical models your code uses:
 - Is this either a fork of or an alternate implementation of another project?:   True
 - Does it use a side-chain?: Yes, Arbitrum
 - Describe any specific areas you would like addressed:
@@ -194,6 +219,6 @@ Accounts should not be able to get an NFV without a proxy being deployed for the
 
 # Tests
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
+_Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report._
 
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+_Note: Many wardens run Slither as a first pass for testing. Please document any known errors with no workaround._
