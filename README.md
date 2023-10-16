@@ -50,7 +50,7 @@ Our modifications to the existing GEB framework include the addition of a Non-Fu
 - Lite Paper: https://www.opendollar.com/lite-paper
 - Protocol Diagram: https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v1?type=design&node-id=0%3A1&mode=design&t=tR5NcHdXGTHys5US-1
 
-![Protocol Diagram](https://github.com/code-423n4/2023-10-opendollar/figma-chart-preview.png)
+![Protocol Diagram](https://github.com/code-423n4/2023-10-opendollar/blob/main/figma-chart-preview.png)
 
 ### Files to focus on an approximate number of lines
 
