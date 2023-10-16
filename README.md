@@ -42,7 +42,6 @@ Diagram: https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v
 144 ODGovernor
 106 CamelotRelayer
 2 UniV3Relayer
-341 NFTRenderer
 36 ODProxy
 14 ODSafeManager
 1 SAFEHandler
@@ -116,10 +115,10 @@ Automated findings output for the audit can be found [here](https://github.com/c
 ## Links
 
 - **Previous audits:** 
-- **Documentation:**
-- **Website:**
-- **Twitter:** 
-- **Discord:** 
+- **Documentation:** https://docs.opendollar.com/
+- **Website:** https://opendollar.com/
+- **Twitter:** https://twitter.com/open_dollar
+- **Discord:** https://discord.opendollar.com/
 
 
 # Scope
@@ -183,7 +182,7 @@ Automated findings output for the audit can be found [here](https://github.com/c
 - Does it use an oracle?:  No
 - Describe any novel or unique curve logic or mathematical models your code uses: 
 - Is this either a fork of or an alternate implementation of another project?:   True
-- Does it use a side-chain?: No
+- Does it use a side-chain?: Yes, Arbitrum
 - Describe any specific areas you would like addressed:
 ```
 
