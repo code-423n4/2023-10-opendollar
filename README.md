@@ -1,3 +1,9 @@
+![Open Dollar header](https://github.com/code-423n4/2023-10-opendollar/blob/main/open-dollar-header.png)
+
+Open Dollar is a DeFi lending protocol that enables borrowing against liquid staking tokens while earning staking rewards and enabling liquidity via Non-Fungible Vaults (NFVs).
+
+#### [Website](https://opendollar.com/) · [Twitter](https://twitter.com/open_dollar) · [Discord](https://discord.opendollar.com/)
+
 # Open Dollar audit details
 
 - Total Prize Pool: $36,500 USDC
@@ -25,8 +31,6 @@ _Note for C4 wardens: Anything included in the automated findings output is cons
 
 # Overview
 
-## About
-
 Open Dollar is a floating $1.00 pegged stablecoin backed by Liquid Staking Tokens with NFT controlled vaults. Built specifically for Arbitrum. As the majority of the codebase is built with (the already audited) GEB framework, the focus of this one is to review the major changes Open Dollar has made to the framework around proxies, vaults, and the safe manager.
 
 Open Dollar contracts are built using the [GEB](https://github.com/reflexer-labs/geb) framework, which uses Collateralized Debt Positions (CDPs) to allow accounts to generate debt against deposited collateral.
@@ -35,13 +39,6 @@ Here's a quick intro video that might help you get started and understand some o
 https://youtu.be/EjuvGs5SdAA
 
 ![Open Dollar  audit welcome video](https://github.com/code-423n4/2023-10-opendollar/blob/main/walkthrough-thumbnail.png)
-
-### Links
-
-- **Website:** https://opendollar.com/
-- **Testnet App:** https://app.dev.opendollar.com
-- **Twitter:** https://twitter.com/open_dollar
-- **Discord:** https://discord.opendollar.com/
 
 ### Non Fungible Vaults (NFV)
 
@@ -53,6 +50,7 @@ Our modifications to the existing GEB framework include the addition of a Non-Fu
 
 - Docs: https://docs.opendollar.com/
 - Contract docs: https://contracts.opendollar.com
+- **Testnet App:** https://app.dev.opendollar.com
 - Lite Paper: https://www.opendollar.com/lite-paper
 - Protocol Diagram: https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v1?type=design&node-id=0%3A1&mode=design&t=tR5NcHdXGTHys5US-1
 
