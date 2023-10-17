@@ -31,8 +31,8 @@ Open Dollar is a floating $1.00 pegged stablecoin backed by Liquid Staking Token
 
 Open Dollar contracts are built using the [GEB](https://github.com/reflexer-labs/geb) framework, which uses Collateralized Debt Positions (CDPs) to allow accounts to generate debt against deposited collateral.
 
-Here's a quick intro video that might help you get started and understand some of the basics.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EjuvGs5SdAA?si=nTtdEqrnRXhrdLjq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Here's a quick intro video that might help you get started and understand some of the basics:
+https://youtu.be/EjuvGs5SdAA?
 
 ### Links
 
