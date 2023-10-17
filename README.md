@@ -233,3 +233,26 @@ Deploy using Anvil:
 ```bash
 yarn deploy:anvil
 ```
+
+# Other Tips and Tricks 🍬
+
+Here's some helpful tips for using the od-contracts repo effectively.
+
+1. Understand that the changes we have made are isolated from the rest of the internal accounting and SAFE engine. You do not need a full understanding of the SAFE engine to contribute to this audit. You may find it helpful to think of the SAFE engine as a black box.
+
+2. [Units](https://docs.opendollar.com/contract-translation/naming-transition). GEB uses different units for various levels of precision.
+
+| Unit | Meaning |
+| :--- | :--- |
+| WAD | Number with 18 decimals \(10^18\) |
+| RAY | Number with 27 decimals \(10^27\) |
+| RAD | Number with 45 decimals \(10^45\) |
+
+3. Most of the tests in our repo are for contracts in other parts of the system that are out of scope for this audit. But they might still be helpful in understanding how users are expected to interact with the contracts or coming up with ideas or patterns for potential attacks.
+
+4. The primary entry point for users into the rest of the protocol is through their ODProxy which is used to execute proxy actions. Except when the user does not have a proxy and is making one for the first time. 
+
+5. We're on your team! If you have questions, ask the Open Dollar devs for help. Seriously, don't be a stranger.
+
+
+
