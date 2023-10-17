@@ -31,20 +31,20 @@ _Note for C4 wardens: Anything included in the automated findings output is cons
 
 # Overview
 
-Open Dollar is a floating $1.00 pegged stablecoin backed by Liquid Staking Tokens with NFT controlled vaults. Built specifically for Arbitrum. As the majority of the codebase is built with (the already audited) GEB framework, the focus of this one is to review the major changes Open Dollar has made to the framework around proxies, vaults, and the safe manager.
+Open Dollar is a floating $1.00 pegged stablecoin backed by Liquid Staking Tokens with NFT controlled vaults. Built specifically for Arbitrum. As the majority of the codebase is built with (the already audited) GEB framework, the focus of this audit is to review the major changes Open Dollar has made to the framework around proxies, vaults, and the safe manager.
 
 Open Dollar contracts are built using the [GEB](https://github.com/reflexer-labs/geb) framework, which uses Collateralized Debt Positions (CDPs) to allow accounts to generate debt against deposited collateral.
-
-Here's a quick intro video that might help you get started and understand some of the basics:
-https://youtu.be/EjuvGs5SdAA
-
-![Open Dollar  audit welcome video](https://github.com/code-423n4/2023-10-opendollar/blob/main/walkthrough-thumbnail.png)
 
 ### Non Fungible Vaults (NFV)
 
 > NOTE: The terms "CDP", "vault", and "safe" are used interchangeably here. They all refer to a collateralized debt-position in the protocol.
 
-Our modifications to the existing GEB framework include the addition of a Non-Fungible Vault (NFV) feature, which ties CDP ownership to a specific NFT, rather than using the traditional account-based ownership for CDPs. This approach creates a new primitive to build additional markets on and opportunities for users. Vaults can be sold through existing NFT marketplaces, automations can sell user vaults to arbitrageurs without having to pay liquidation penalties, and existing NFT infrastructure can be used in new ways. With a more capital efficient market for liquidatable vaults there is less risk when creating leveraged positions.
+Our modifications to the existing GEB framework include the addition of a Non-Fungible Vault (NFV) feature, which ties CDP ownership to a specific NFT, rather than using the traditional account-based ownership for CDPs. This approach creates a new defi primitive, enabling the development of novel marketplaces, and generating new opportunities for users. Vaults can be sold through existing NFT marketplaces, automations can sell user vaults to arbitrageurs without having to pay liquidation penalties, and existing NFT infrastructure can be used in new ways. With a more capital efficient market for liquidatable vaults there is less risk when creating leveraged positions.
+
+Here's a quick intro video that might help you get started and understand some of the basics:
+https://youtu.be/EjuvGs5SdAA
+
+![Open Dollar  audit welcome video](https://github.com/code-423n4/2023-10-opendollar/blob/main/walkthrough-thumbnail.png)
 
 ### Docs & Resources
 
@@ -156,10 +156,10 @@ Protocol will be deployed to Arbitrum One (ID: 42161)
 
 ## Attack ideas (Where to look for bugs)
 
-1. Create a smart contract that is able to receive an NFV without a proxy being deployed for it by calling transfer in a constructor or other means
-2. Mint debt against an NFV in the same transaction that it is transfered to someone else, allowing the attacker to mislead an NFV buyer about the value of the NFV being bought
-3. Use reentrancy to trick the SafeManager into allowing your modifications to a safe you don't own
-4. Break access control by calling SafeManager directly without using the ODproxy
+1. Create a smart contract that is able to receive an NFV without a proxy being deployed for it, eg. by calling transfer in a constructor, or other means.
+2. Mint debt against an NFV in the same transaction that it is transfered to someone else, allowing the attacker to mislead an NFV buyer about the value of the NFV being bought.
+3. Use reentrancy to trick the SafeManager into allowing your modifications to a safe you don't own.
+4. Break access-control by calling SafeManager directly without using the ODproxy.
 
 ## Main invariants
 
@@ -167,11 +167,11 @@ Protocol will be deployed to Arbitrum One (ID: 42161)
 2. If the ERC-721 token from Vault721 is transfered, so too is the ownership and control of the corresponding safe. Meaning only the owner can transfer it or mint debt against it.
 3. Users must exclusively use the ODProxy to interact with their safes.
 4. When a fresh account, which has never interacted with the protocol, receives an NFV via ERC721 transfer, an ODProxy should always be deployed for them.
-5. ODProxy's can not be transfered or change owner.
-6. There is 1 safe for each ERC-721 token, and their IDs always correspond.
-7. Proper Access Control ensures that transferring safes can only be initiated at the Vault721 .
+5. ODProxy cannot be transfered or change owner.
+6. There is 1 safe for each ERC-721 token, and the safe ID always corresponds to the NFT ID.
+7. Proper Access Control ensures that transferring safes can only be performed using the Vault721 .
 8. A user only ever has a single ODProxy deployed for them.
-9. Only the governor role can set an external Renderer contract for the NFV's URI.
+9. Only the governor role can set an external Renderer contract for the NFV's token URI.
 
 ## Scoping Details
 
