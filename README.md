@@ -1,14 +1,14 @@
 # Open Dollar audit details
 
 - Total Prize Pool: $36,500 USDC
-  - HM awards: $24,750 USDC 
-  - Analysis awards: $1,500 USDC 
-  - QA awards: $750 USDC 
-  - Bot Race awards: $2,250 USDC 
-  - Gas awards: $250 USDC 
-  - Judge awards: $3,600 USDC 
-  - Lookout awards: $2,400 USDC 
-  - Scout awards: $500 USDC 
+  - HM awards: $24,750 USDC
+  - Analysis awards: $1,500 USDC
+  - QA awards: $750 USDC
+  - Bot Race awards: $2,250 USDC
+  - Gas awards: $250 USDC
+  - Judge awards: $3,600 USDC
+  - Lookout awards: $2,400 USDC
+  - Scout awards: $500 USDC
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2023-10-open-dollar/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
@@ -32,11 +32,14 @@ Open Dollar is a floating $1.00 pegged stablecoin backed by Liquid Staking Token
 Open Dollar contracts are built using the [GEB](https://github.com/reflexer-labs/geb) framework, which uses Collateralized Debt Positions (CDPs) to allow accounts to generate debt against deposited collateral.
 
 Here's a quick intro video that might help you get started and understand some of the basics:
-https://youtu.be/EjuvGs5SdAA?
+https://youtu.be/EjuvGs5SdAA
+
+![Open Dollar  audit welcome video](https://github.com/code-423n4/2023-10-opendollar/blob/main/walkthrough-thumbnail.png)
 
 ### Links
 
 - **Website:** https://opendollar.com/
+- **Testnet App:** https://app.dev.opendollar.com
 - **Twitter:** https://twitter.com/open_dollar
 - **Discord:** https://discord.opendollar.com/
 
