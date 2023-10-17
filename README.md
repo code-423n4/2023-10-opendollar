@@ -48,26 +48,20 @@ Our modifications to the existing GEB framework include the addition of a Non-Fu
 
 ### Docs & Resources
 
+- Live testnet app: https://app.opendollar.com
+- Npm packages: SDK [`@opendollar/sdk`](https://www.npmjs.com/package/@opendollar/sdk) and Contract ABIs [`@opendollar/abis`](https://www.npmjs.com/package/@opendollar/abis)
 - Docs: https://docs.opendollar.com/
-- Contract docs: https://contracts.opendollar.com
-- **Testnet App:** https://app.dev.opendollar.com
+- Contracts docs: https://contracts.opendollar.com
 - Lite Paper: https://www.opendollar.com/lite-paper
 - Protocol Diagram: https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v1?type=design&node-id=0%3A1&mode=design&t=tR5NcHdXGTHys5US-1
 
 ![Protocol Diagram](https://github.com/code-423n4/2023-10-opendollar/blob/main/figma-chart-preview.png)
 
-### Files to focus on an approximate number of lines
-
-The Following contracts are where we have created the new NFV feature, and where we would like auditors to focus their attention:
-
-- [contracts/proxies/Vault721.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/Vault721.sol)
-- [contracts/proxies/ODSafeManager.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODSafeManager.sol)
-- [contracts/proxies/ODProxy.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODProxy.sol)
-- [contracts/proxies/SAFEHandler.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/SAFEHandler.sol)
-
 # Scope
 
-#### IMPORTANT: The audit scope is based to the difference between `open-dollar/od-contracts` at [`v.1.5.5-audit`](https://github.com/open-dollar/od-contracts/releases/tag/v1.5.5) and `hai-on-op/core` at [`v0.1.2-rc.3`](https://github.com/hai-on-op/core/releases/tag/v0.1.2-rc.3). For convenience, we created a Pull Request showing these changes: https://github.com/open-dollar/od-contracts/pull/187
+#### IMPORTANT: The audit scope is based on our [`v.1.5.5-audit release`](https://github.com/open-dollar/od-contracts/releases/tag/v1.5.5)
+
+Our contracts are forked from `hai-on-op/core` at [`v0.1.2-rc.3`](https://github.com/hai-on-op/core/releases/tag/v0.1.2-rc.3). Since that code has already been audited, we suggest that Wardens focus on the changes we've made since then. For convenience, we created a Pull Request showing these changes here: https://github.com/open-dollar/od-contracts/pull/187
 
 | Contract                                                                                                                                                         | SLOC | Purpose                                                                                                                                                                                                                                                                                                       |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -84,6 +78,15 @@ The Following contracts are where we have created the new NFV feature, and where
 | [contracts/proxies/actions/BasicActions.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/actions/BasicActions.sol)       | 268  |
 
 Total: **998 lines**
+
+## Files to focus on
+
+The Following contracts are where we have implemented the new NFV feature, and where we would like auditors to focus their attention:
+
+- [contracts/proxies/Vault721.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/Vault721.sol)
+- [contracts/proxies/ODSafeManager.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODSafeManager.sol)
+- [contracts/proxies/ODProxy.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/ODProxy.sol)
+- [contracts/proxies/SAFEHandler.sol](https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/src/contracts/proxies/SAFEHandler.sol)
 
 ## Libraries
 
@@ -199,6 +202,8 @@ Protocol will be deployed to Arbitrum One (ID: 42161)
 
 # Tests
 
+## Setup
+
 Clone [`open-dollar/od-contract`](https://github.com/open-dollar/od-contracts)
 
 ```bash
@@ -219,6 +224,21 @@ yarn
 yarn build
 ```
 
+Setup the environment:
+
+```bash
+cp .env.example .env
+```
+
+The only required variables for running tests are:
+
+```
+MAINNET_RPC=https://arbitrum-one.publicnode.com
+GOERLI_RPC=https://arbitrum-goerli.publicnode.com
+```
+
+## Forge tests
+
 Run tests with foundry:
 
 ```bash
@@ -226,8 +246,27 @@ yarn test
 yarn test:e2e
 ```
 
-Deploy using Anvil:
+> We expect 22 failing tests:
+>
+> - 1 failing test in test/nft/anvil/NFT.t.sol:NFTAnvil
+> - 1 failing test in test/nft/anvil/TransferOwnership.t.sol:TransferOwnershipAnvil
+> - 1 failing test in test/nft/goerli/NFT.t.sol:NFTGoerli
+> - 1 failing test in test/nft/goerli/governor/GovActions.t.sol:GovActions
+> - 5 failing tests in test/single/AccountingEngine.t.sol:SingleAccountingEngineTest
+> - 1 failing test in test/single/SAFEEngine.t.sol:SingleLiquidationTest
+> - 8 failing tests in test/unit/AccountingEngine.t.sol:Unit_AccountingEngine_AuctionSurplus
+> - 4 failing tests in test/unit/oracles/UniV3RelayerFactory.t.sol::Unit_UniV3RelayerFactory_DeployUniV3Relayer
+
+Deploy to local Anvil environment:
 
 ```bash
 yarn deploy:anvil
 ```
+
+## Slither
+
+```bash
+slither .
+```
+
+> We are aware of errors `ContractSolcParsing`, `SlitherSolcParsing`, etc when running slither. See output here: https://gist.github.com/pi0neerpat/0984343ca5c0f784f3387f1435af4a5e
