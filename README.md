@@ -1,4 +1,4 @@
-![Open Dollar header](https://github.com/code-423n4/2023-10-opendollar/blob/main/open-dollar-header.png)
+![Open Dollar header](https://github.com/code-423n4/2023-10-opendollar/blob/main/open-dollar-header.png?raw=true)
 
 Open Dollar is a DeFi lending protocol that enables borrowing against liquid staking tokens while earning staking rewards and enabling liquidity via Non-Fungible Vaults (NFVs).
 
@@ -46,7 +46,7 @@ Our modifications to the existing GEB framework include the addition of a Non-Fu
 Here's a quick intro video that might help you get started and understand some of the basics:
 https://youtu.be/EjuvGs5SdAA
 
-![Open Dollar  audit welcome video](https://github.com/code-423n4/2023-10-opendollar/blob/main/walkthrough-thumbnail.png)
+![Open Dollar  audit welcome video](https://github.com/code-423n4/2023-10-opendollar/blob/main/walkthrough-thumbnail.png?raw=true)
 
 ### Docs & Resources
 
