@@ -17,9 +17,10 @@
 
 ## Automated Findings / Publicly Known Issues
 
+The 4naly3er report can be found [here](https://github.com/code-423n4/2023-10-opendollar/blob/main/4naly3er.md)
 Automated findings output for the audit can be found [here](https://github.com/code-423n4/2023-10-opendollar/blob/main/bot-report.md) within 24 hours of audit opening.
 
-_Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards._
+_Note for C4 wardens: Anything included in the 4naly3er **or** the automated findings output is considered a publicly known issue and is ineligible for awards._
 
 - Governor role can update the safeManager address in the NFV, which would break the protocol if ever set incorrectly or maliciously.
 
