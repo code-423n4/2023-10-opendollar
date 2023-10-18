@@ -7,7 +7,7 @@ Open Dollar is a DeFi lending protocol that enables borrowing against liquid sta
 # Open Dollar audit details
 
 - Total Prize Pool: $36,500 USDC
-  - HM awards: $24,750 USDC
+  - HM awards: $25,250 USDC
   - Analysis awards: $1,500 USDC
   - QA awards: $750 USDC
   - Bot Race awards: $2,250 USDC
