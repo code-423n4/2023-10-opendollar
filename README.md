@@ -23,7 +23,7 @@ Open Dollar is a DeFi lending protocol that enables borrowing against liquid sta
 
 ## Automated Findings / Publicly Known Issues
 
-The 4naly3er report can be found [here](https://github.com/code-423n4/2023-10-opendollar/blob/main/4naly3er-report.md)
+The 4naly3er report can be found [here](https://github.com/code-423n4/2023-10-opendollar/blob/main/4naly3er-report.md) .
 
 Automated findings output for the audit can be found [here](https://github.com/code-423n4/2023-10-opendollar/blob/main/bot-report.md) within 24 hours of audit opening.
 
