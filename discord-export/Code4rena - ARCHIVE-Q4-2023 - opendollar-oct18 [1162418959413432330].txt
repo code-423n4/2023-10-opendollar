@@ -1,0 +1,1955 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q4-2023 / opendollar-oct18
+==============================================================
+
+[10/17/2023 02:21] cupojoseph
+:donut1:
+
+{Reactions}
+🍩 
+
+[10/17/2023 10:54] devblixt_
+hi
+
+
+[10/17/2023 18:30] kartoonjoy (pinned)
+👋 Hello and welcome to the audit channel for the $36,500 USDC **Open Dollar** audit!
+
+📆 Audit opens 10/18/2023 20:00 (20:00 UTC) and runs through 10/25/2023 20:00 (20:00 UTC) (7 days).
+
+Please give a warm welcome to the Open Dollar team, particularly @pi0neerpat | Open Dollar, @cupOjoseph, @huntrr, who will be available for questions either here in the channel or via DM in the EDT timezone(s).
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://code4rena.com/contests/2023-10-open-dollar#top
+
+{Embed}
+https://code4rena.com/contests/2023-10-open-dollar
+Open Dollar | Code4rena
+A floating $1.00 pegged stablecoin backed by Liquid Staking Tokens with NFT controlled vaults.
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/c4-og-banner-DC5D5.png
+
+{Reactions}
+👋 (8) 
+
+[10/17/2023 18:30] kartoonjoy
+Pinned a message.
+
+
+[10/18/2023 15:52] cupojoseph
+Hey wardens and team! I just scheduled an open Office Hours with the Open Dollar devs on Friday at 3pm EDT, in the OD discord. Join us there to ask any questions synchronously. 
+
+https://discord.gg/VC4yAjSg?event=1164229002286874744
+
+{Reactions}
+🔥 (5) chefskiss (3) 
+
+[10/18/2023 20:01] thebrittfactor (pinned)
+**4naly3er Report**
+
+The 4naly3er report can be found [here](https://github.com/code-423n4/2023-10-opendollar/blob/main/4naly3er-report.md).
+
+*Note for C4 wardens: Please note that going forward, we'll be posting the 4naly3er report at audit launch. This will be in addition to the automated findings (bot report), so anything included in the 4naly3er or the automated findings output (once shared) is considered a publicly known issue and is ineligible for awards.*
+
+{Reactions}
+🔥 (6) thankyou (2) 
+
+[10/18/2023 20:02] thebrittfactor
+Pinned a message.
+
+
+[10/18/2023 20:17] pi0neerpat
+Howdy! I'm here to help answer questions
+
+{Reactions}
+👋🏻 (9) 
+
+[10/18/2023 20:31] cupojoseph
+👋 hey wardens. We're ready for an awesome audit and here to help!
+
+{Reactions}
+🎉 (9) 
+
+[10/18/2023 21:12] chainsentry
+Hey guys👋  is anyone else getting this error?
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/Screenshot_from_2023-10-18_22-11-36-5D588.png
+
+
+[10/18/2023 22:15] pi0neerpat
+are you on tag v1.5.5-audit?
+
+{Reactions}
+🫡 (2) 
+
+[10/19/2023 01:53] 0x11singh99
+Have the findings of the previous audit been fixed ? @pi0neerpat | Open Dollar
+
+
+[10/19/2023 02:05] 0x11singh99
+```
+yarn test
+yarn run v1.22.19
+$ FOUNDRY_FUZZ_RUNS=128 FOUNDRY_FUZZ_MAX_TEST_REJECTS=1000000 forge test -vvv --ffi
+'FOUNDRY_FUZZ_RUNS' is not recognized as an internal or external command,
+operable program or batch file.
+error Command failed with exit code 1.
+```            
+
+when running the tests using `yarn test`  this above error is coming
+
+
+[10/19/2023 05:04] Message Wolf#0225 (pinned)
+**Automated Findings / Publicly Known Issues**
+
+Automated findings output for the audit can be found [here](https://gist.github.com/code423n4/ff4868d6946db4c2242a7c5594baece6).
+
+*Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
+
+
+[10/19/2023 06:46] daniel_dimitrov5
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-0E179.png
+
+
+[10/19/2023 06:59] superman_i4g
+I think you might be missing out on the setup procedure provided. Check it and follow exactly what is stated.
+
+
+[10/19/2023 07:18] daniel_dimitrov5
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-53DFC.png
+
+
+[10/19/2023 07:20] daniel_dimitrov5
+I'm sure I do
+
+{Reactions}
+ambire_favicon 
+
+[10/19/2023 07:28] superman_i4g
+‘Yarn’ failed
+
+
+[10/19/2023 07:29] daniel_dimitrov5
+yeah
+
+
+[10/19/2023 07:30] superman_i4g
+Is your internal connection working?
+
+
+[10/19/2023 07:31] daniel_dimitrov5
+yes
+
+
+[10/19/2023 07:32] superman_i4g
+Okay, try it again. 
+Mine worked pretty much fine so just try running ‘yarn’ again
+
+
+[10/19/2023 07:33] daniel_dimitrov5
+I've tried multiple times 😦
+
+
+[10/19/2023 07:33] daniel_dimitrov5
+no change
+
+
+[10/19/2023 07:36] superman_i4g
+Then you might have to wait till one of the judges are online to help. I am using windows so can’t really help here.
+
+
+[10/19/2023 07:37] daniel_dimitrov5
+Thanks man
+
+{Reactions}
+👍 
+
+[10/19/2023 07:38] daniel_dimitrov5
+`forge test` works, so I'm not stuck at least.
+
+
+[10/19/2023 08:16] superman_i4g
+‘Forge build’ taking hours to compile🤦🏽‍♂️
+
+
+[10/19/2023 10:47] superman_i4g
+Did it take too long for the test to run?
+
+
+[10/19/2023 11:59] viraz4331
+hey @pi0neerpat | Open Dollar @cupOjoseph @huntrr 
+I see there are 5 additional failing tests might wanna update the readme
+```
+Encountered 1 failing test in test/e2e/Deploy.t.sol:E2EDeploymentGoerliTest
+[FAIL. Reason: Setup failed: Failed to get environment variable `GOERLI_DEPLOYER_PK` as type `bytes32`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/e2e/Deploy.t.sol:E2EDeploymentMainnetTest
+[FAIL. Reason: Setup failed: Failed to get environment variable `MAINNET_DEPLOYER_PK` as type `bytes32`: environment variable not found] setUp() (gas: 0)
+
+Encountered 2 failing tests in test/e2e/Deploy.t.sol:GoerliDeploymentTest
+[FAIL. Reason: Assertion failed.] test_Grant_Auth() (gas: 446110)
+[FAIL. Reason: Incorrect params] test_SurplusAuctionHouse_Params() (gas: 28053)
+
+Encountered 1 failing test in test/e2e/Oracles.t.sol:OracleSetup
+[FAIL. Reason: Setup failed: backend: failed while inspecting: Database(GetAccount(0x0000000000000000000000000000000000000000, 
+(code: -32000, message: missing trie node 0000000000000000000000000000000000000000000000000000000000000000 (path ) <nil>, data: None)))] setUp() (gas: 0)
+```
+
+
+[10/19/2023 12:05] 0xarav
+Took me 2 minutes
+
+
+[10/19/2023 12:12] codecipher9
+is 'proxies/NFTRenderer.sol' part of the audit, as it is not specified in either the scope or out-of-scope contracts ?
+
+
+[10/19/2023 12:25] superman_i4g
+Mine is taking forever after compilation
+
+
+[10/19/2023 12:55] thebrittfactor
+Pinned a message.
+
+
+[10/19/2023 12:59] daniel_dimitrov5
+It took some time
+
+
+[10/19/2023 13:01] superman_i4g
+Aight, looks like I need to be more patient😮‍💨
+
+
+[10/19/2023 13:13] cupojoseph
+The renderer is out of scope, but how the vault721 accesses it is within scope
+
+{Reactions}
+👍 
+
+[10/19/2023 13:14] cupojoseph
+The setup is failing bc you're missing an env variable
+
+
+[10/19/2023 13:30] cupojoseph
+It's usually about 20mim for a full deployment so that seems quite long
+
+{Reactions}
+💯 
+
+[10/19/2023 13:42] rickardlarsson6
+Is 'yarn test' the command?
+
+{Reactions}
+☑️ 
+
+[10/19/2023 14:57] sandnallani
+Basic question. Is this the audit repo? https://github.com/open-dollar/od-contracts/tree/v1.5.5-audit
+
+
+[10/19/2023 15:04] viraz4331
+I’m having the 2 that are mentioned in the contest page which one is missing?
+
+
+[10/19/2023 15:38] superman_i4g
+Yes
+
+
+[10/19/2023 15:38] superman_i4g
+Yup; you can try forge test too
+
+{Reactions}
+🫡 👌 
+
+[10/19/2023 15:50] sandnallani
+For anyone trying to compile error free, 
+git checkout v1.5.5
+`via_ir = false` in .toml
+
+{Reactions}
+👍 
+
+[10/19/2023 16:11] 0xkarl98
+hi all
+
+
+[10/19/2023 16:11] 0xkarl98
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-FA401.png
+
+
+[10/19/2023 16:12] 0xkarl98
+anyone knows why it returns not match on my end ?
+
+
+[10/19/2023 16:12] 0xkarl98
+i just did git clone and then switch to this scope branch
+
+
+[10/19/2023 16:28] cupojoseph
+Yes
+
+
+[10/19/2023 16:29] cupojoseph
+Try
+git pull origin {branch name}
+
+
+[10/19/2023 16:30] cupojoseph
+GOERLI_DEPLOYER_PK
+
+
+[10/19/2023 16:30] sandnallani
+The view repo button doesn't lead to the audit code repo. It would help to fix this.
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/ViewRepoBroken-A4986.png
+
+
+[10/19/2023 16:32] sandnallani
+But really appreciate the clear documentation and the walkthrough video. Really helpful.
+
+{Reactions}
+🙏 
+
+[10/19/2023 16:32] cupojoseph
+I'm glad you liked the video! 🙏
+
+
+[10/19/2023 16:33] sandnallani
+Honestly, would've loved it to be a few mins longer showing glimpses of the contracts, so we get an idea even before having to setup the repo.
+
+
+[10/19/2023 16:33] cupojoseph
+worked fine for me, you mean from here right? https://code4rena.com/contests/2023-10-open-dollar
+
+{Embed}
+https://code4rena.com/contests/2023-10-open-dollar
+Open Dollar | Code4rena
+A floating $1.00 pegged stablecoin backed by Liquid Staking Tokens with NFT controlled vaults.
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/c4-og-banner-1C532.png
+
+
+[10/19/2023 16:33] cupojoseph
+good idea, I can add to it later tonight
+
+{Reactions}
+🙌🏽 
+
+[10/19/2023 16:34] sandnallani
+For me , when I click the `View Repo` it takes me to https://github.com/code-423n4/2023-10-opendollar
+
+
+[10/19/2023 16:38] cupojoseph
+That's the contest repo so I think it's correct
+
+
+[10/19/2023 16:51] sandnallani
+imo, it should lead to https://github.com/open-dollar/od-contracts/tree/v1.5.5-audit to avoid any confusions.
+
+
+[10/19/2023 17:00] debofx
+Hello All, What are Safe IDs?
+
+
+[10/19/2023 17:38] pi0neerpat
+Id of the safe. Starting at 1, counting up
+
+{Reactions}
+👍 
+
+[10/19/2023 18:25] cupojoseph
+SafeID should also always correspond with the nft id for the particular vault/safe
+
+{Reactions}
+👍 
+
+[10/19/2023 18:58] xariextz
+Where can we find the audit for: hai-on-op/core at v0.1.2-rc.3
+
+
+[10/19/2023 19:01] nican0r
+@pi0neerpat | Open Dollar @cupOjoseph  I'm a bit unclear on what the system coins do, are they what's used inside the system once a user has deposited LSTs so they can all be handled equivalently? Are they what's used to collateralize debt positions in a vault?
+
+
+[10/19/2023 19:02] xariextz
+Can we assume that everything that is out of the pull request is already audited and working? Things like CommonActions etc.
+
+
+[10/19/2023 19:19] pi0neerpat
+The audit is not public yet. It was performed by another team. The changes from that audit have not been added yet.
+
+
+[10/19/2023 19:21] pi0neerpat
+The system coin is what’s used to keep track of all value within the protocol. It’s also the ERC20 that’s given to wallets when debt is minted
+
+{Reactions}
+👍 
+
+[10/19/2023 19:27] xariextz
+So what happens if we find the same issues?
+
+
+[10/19/2023 19:27] xariextz
+Or if they submit the same issues in the contest?
+
+{Reactions}
+👍 
+
+[10/19/2023 19:46] theschnilch
+Where are the tests that are relevant for this contest?
+
+
+[10/19/2023 20:10] pi0neerpat
+The previous audit did not include the new changes we've made. The scope of this audit is only on the new changes
+
+{Reactions}
+👍 
+
+[10/19/2023 20:11] pi0neerpat
+lmk if that doesnt answer your question. Also feel free to DM if you prefer to chat privately
+
+
+[10/19/2023 20:12] pi0neerpat
+I would use the contract names to search for a specific test you're looking for
+
+{Reactions}
+👍 
+
+[10/19/2023 20:13] pi0neerpat
+The tests are not necessarily  organized according to the audit scope
+
+
+[10/19/2023 23:19] 0xhelium
+how to clone ? i'am getting errors
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-8C494.png
+
+
+[10/19/2023 23:39] 0xkarl98
+alright found it in release page
+
+
+[10/20/2023 02:40] sa3083
+Could we get the commit id on which the old audit was performed ?
+
+
+[10/20/2023 02:41] sa3083
+Or the list of changes made since the audit was made ?
+
+
+[10/20/2023 02:41] pi0neerpat
+> IMPORTANT: The audit scope is based on our v.1.5.5-audit release
+> Our contracts are forked from hai-on-op/core at v0.1.2-rc.3. Since that code has already been audited, we suggest that Wardens focus on the changes we've made since then. For convenience, we created a Pull Request showing these changes here: open-dollar/od-contracts#187
+
+
+[10/20/2023 02:41] pi0neerpat
+https://github.com/open-dollar/od-contracts/pull/187
+
+{Embed}
+https://github.com/open-dollar/od-contracts/pull/187
+v1.5.5 𝚫 hai@v0.1.2-rc.3 [Do not merge] by pi0neerpat · Pull Reques...
+This PR shows the difference between our audit release v1.5.5-audit and hai-on-op/core at tag v0.1.2-rc.3.
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/187-60B01
+
+
+[10/20/2023 02:41] sa3083
+Thank you
+
+
+[10/20/2023 02:43] pi0neerpat
+strange. the repo is public. You may want to try cloning using https instead
+
+```bash
+git clone https://github.com/open-dollar/od-contracts.git
+git checkout v1.5.5-audit
+```
+
+
+[10/20/2023 02:43] pi0neerpat
+I use ssh for all github interactions, so thats why I included the ssh version to clone
+
+
+[10/20/2023 05:21] 0xarav
+I got the same error. 
+Worked with https link
+
+
+[10/20/2023 06:07] daniel_dimitrov5
+yarn is failing
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-D9B8F.png
+
+
+[10/20/2023 06:07] daniel_dimitrov5
+@pi0neerpat | Open Dollar
+
+
+[10/20/2023 09:45] debofx
+there is normally a yarn or foundry command at the end of the c4 page for opendollar? There normally is one for git clones
+
+
+[10/20/2023 10:49] proxy1967
+What does `NFTRenderer` do on a high level ?
+
+
+[10/20/2023 11:04] kek_ccak256
+the camelot stuff is from the camelot dex on arbitrum?
+
+
+[10/20/2023 11:04] kek_ccak256
+is it using the v1, v2, or v3?
+
+
+[10/20/2023 12:15] rickardlarsson6
+This helped me:
+https://stackoverflow.com/questions/2643502/git-how-to-solve-permission-denied-publickey-error-when-using-git
+
+{Embed}
+https://stackoverflow.com/questions/2643502/git-how-to-solve-permission-denied-publickey-error-when-using-git
+Git: How to solve Permission denied (publickey) error when using Git?
+I'm on Mac Snow Leopard and I just installed git.
+
+I just tried 
+
+git clone git@thechaw.com:cakebook.git
+but that gives me this error:
+
+Initialized empty Git repository in `/Users/username/Documents/
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/apple-touch-icon%402-C50E4.png
+
+
+[10/20/2023 14:19] 0xarno
+how do i fix this
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-F4B85.png
+
+
+[10/20/2023 14:56] blckhv
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/Screenshot_2023-10-20_at_17.56.36-297E1.png
+
+
+[10/20/2023 14:58] 0xarno
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-2E30C.png
+
+
+[10/20/2023 15:04] blckhv
+did you follow the steps from the contest documentation?
+
+
+[10/20/2023 15:46] pi0neerpat
+@daniel_dimitrov5 @debo @Arno please make sure your yarn is up to date, and that you are on the correct commit v1.5.5-audit
+
+{Reactions}
+👍 
+
+[10/20/2023 15:48] pi0neerpat
+That’s correct. Camelot Dex on Arbitrum @huntrr has the full answer to this one.
+
+
+[10/20/2023 15:49] 0xlemon
+Are we using one Vault721 for all of the users and NFTs or does each user have their own vault?
+
+
+[10/20/2023 15:51] pi0neerpat
+Each user creates their own vaults. Ownership is tied to the NFT ownership. Therefore a user may also receive a vault via transfer of the NFT
+
+{Reactions}
+10_10 👍 
+
+[10/20/2023 15:58] 0xc86
+worst possible place to shill
+
+
+[10/20/2023 15:58] nethoxa
+he has written that everywhere
+
+{Reactions}
+😆 
+
+[10/20/2023 15:58] daopunk
+Camelot AMM V2:
+https://github.com/CamelotLabs/core
+Camelot AMM V3 is using Algrebra V1:
+https://github.com/cryptoalgebra/AlgebraV1/tree/main
+
+
+[10/20/2023 16:43] viraz4331
+@pi0neerpat | Open Dollar dm'ed you
+
+
+[10/20/2023 16:59] llihwerd
+📣 Shout out to the auditors hard at work 💪💻
+
+We’re hosting a code-focused office hours #AMA in our Discord 👾 from 3-5pm EDT today & everyone is welcome to join!
+
+It’s already been an exciting @code4rena audit with everyone here, so to maintain the mental momentum, we’ll be discussing:
+
+🔵 Code Security
+🔵 Protocol Insights
+🔵 AMA ft. OD's Expert Team
+
+Join us at 3 pm EDT, there’s more than enough room 👍
+https://discord.com/invite/hyze8JjF?event=1164229002286874744
+
+{Reactions}
+🔥 
+
+[10/20/2023 17:09] yashar0x
+Hey guys
+Does anyone face this error:
+```
+Running 1 test for test/nft/anvil/NFT.t.sol:NFTAnvil
+[FAIL. Reason: Setup failed: EvmError: Revert] setUp() (gas: 0)
+Traces:
+  [226396] NFTAnvil::setUp() 
+    ├─ [0] 0x5bf5b11053e734690269C6B9D438F8C9d48F528A::getProxy(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266) [staticcall]
+    │   └─ ← ()
+    └─ ← "EvmError: Revert"
+
+Test result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 816.20µs
+ 
+Ran 1 test suites: 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/nft/anvil/NFT.t.sol:NFTAnvil
+[FAIL. Reason: Setup failed: EvmError: Revert] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+```
+command: `forge t --fork-url $ANVIL_RPC --match-contract NFTAnvil -vvvvv`
+
+
+[10/20/2023 17:34] xariextz
+Just asked about the same error. It doesnt't work when trying to test only the NFT
+
+
+[10/20/2023 17:41] xariextz
+Which I guess is the most important part
+
+
+[10/20/2023 17:55] yashar0x
+Yeah
+I'm talking to the sponsor team
+
+{Reactions}
+👍 
+
+[10/20/2023 17:57] xariextz
+I did too. Will update you in DM if they answer me
+
+
+[10/20/2023 17:57] yashar0x
+Thank you brother
+I will do this too
+
+{Reactions}
+👍 
+
+[10/20/2023 17:58] yashar0x
+I'm wondering how other auditors didn't face this error?
+
+
+[10/20/2023 19:05] theschnilch
+I have the same problem. Can you also write to me when you find out how to solve this?
+
+
+[10/20/2023 19:20] yashar0x
+I'm talking to the sponsor team and trying to solve this 
+Seems there is a workaround for this but it's a little bit complicated
+
+
+[10/20/2023 19:30] yashar0x (pinned)
+Guys this is the workaround
+
+1- Delete every .json files within broadcast/Deploy.s.ol/31337 and also within deployments folder
+2- Open a terminal and type: anvil
+3- Copy one of the Private Keys from anvil output and paste it in .env: ANVIL_ONE={Your Private Key}
+4- yarn deploy:anvil (This command will create some .json files in this path: broadcast/Deploy.s.ol/31337
+5- Copy all the .json files from broadcast/Deploy.s.ol/31337 and paste them in deployments
+6- command: node tasks/parseAnvilDeployments.js
+5- run your forge command (E.g: forge t --fork-url $ANVIL_RPC --match-contract NFTAnvil --match-test test_setup -vvvvvv)
+
+You have to do this everytime you run anvil
+
+
+[10/20/2023 19:31] yashar0x
+Thanks to the sponsor team @huntrr
+
+{Reactions}
+⚔️ 
+
+[10/20/2023 19:33] cupojoseph
+https://discord.gg/kgGb8rT5?event=1164229002286874744
+Hey y'all dont forget its office hours. all the devs are hanging out and answering your questions
+
+
+[10/21/2023 02:41] mrosas
+What's the deployment contracts begin with?
+
+
+[10/21/2023 02:41] mrosas
+What is deployed first?
+
+
+[10/21/2023 03:10] cupojoseph (pinned)
+roughly the order: https://github.com/open-dollar/od-contracts/blob/dev/script/GoerliContracts.s.sol
+this is the output of our last goerli deployment roughly in order that things are deployed. deployment is totally automated, so you can verify the order of things in the deployment scripts there
+
+
+[10/21/2023 03:11] cupojoseph
+I think technically the deployment scripts were not included in the audit scope, but if you find something there related to in scope contracts that would be very interesting to us!
+
+{Reactions}
+👍🏼 
+
+[10/21/2023 03:37] mrosas
+Which is the test case file that interact with proxy contracts?
+
+
+[10/21/2023 04:23] kartoonjoy
+Pinned a message.
+
+
+[10/21/2023 04:24] kartoonjoy
+Pinned a message.
+
+
+[10/21/2023 10:16] 0xprinc
+One proxy is meant to be mapped to one user and one user mapped to only one proxy. Am i right ?
+
+
+[10/21/2023 10:18] blckhv
+everyone can call external functions of the AccountingEngine, as I don't see any access control being used?
+
+
+[10/21/2023 10:48] 0xprinc
+I also think same
+
+
+[10/21/2023 11:05] ivanfitro
+I have a question, what is the function of SAFEHandler.sol?
+
+
+[10/21/2023 11:26] 0xprinc
+certainly this is what they have provided 
+```
+Grants permission to the ODSafeManager to make modifications to a safe. A new SAFEHandler is deployed for each safe, whose address serves as a unique identifier within the SAFEEngine
+```
+
+
+[10/21/2023 12:27] cupojoseph
+Yes, everyone should have 1 proxy.
+
+
+[10/21/2023 12:27] cupojoseph
+It has no functions. The internal accounting engine uses it's unique address sometimes as an ID of sorts
+
+{Reactions}
+👍 
+
+[10/21/2023 12:28] cupojoseph
+Right, the control is math 🧠
+
+{Reactions}
+MegaBrain (2) 
+
+[10/21/2023 12:34] kek_ccak256
+i didnt have to do all of this i did have to remove the anvil comment from .env as it didnt source with it, i think .env comments are "#" and not "//"
+
+{Reactions}
+👍 (2) 
+
+[10/21/2023 13:20] yashar0x
+Can you test NTF.t.sol now?
+
+
+[10/21/2023 13:40] kek_ccak256
+yes
+
+
+[10/21/2023 15:02] saint6704
+The repo attached on c4 page is misleading
+
+
+[10/21/2023 15:11] debofx
+Yes, you have to go to one of the sol files and then go up a folder or two before you can clone all in scope. But you then have to test just the ones in scope.
+
+
+[10/21/2023 16:02] yashar0x
+Great, but I couldn’t run tests with just commenting anvil within .env
+
+
+[10/21/2023 17:13] pascal9476
+The actual code is not on the C4 repo
+
+
+[10/21/2023 17:14] pascal9476
+Had to go to the website and get the GitHub repo
+
+
+[10/21/2023 18:03] daopunk
+some of y'all had qs about running Anvil, so here are the steps:
+```
+1. set `URL=http://127.0.0.1:8545`
+2. run `anvil`
+3. use Anvil private keys provided
+4. run `yarn deploy:anvil`
+5. in broadcast/Deploy.s.sol/31337, move `run-latest.json` into deployments/anvil folder to overwrite the existing file
+6. run `node tasks/parseAnvilDeployments.js`
+7. run a test script, for example:
+`forge t --fork-url $URL --match-contract NFTAnvil -vvvvv`
+```
+
+
+[10/21/2023 18:38] debofx
+What is the deltaWad variable?
+
+
+[10/21/2023 18:54] cupojoseph
+Wad is a unit, deltaWad is change over time in wad units
+
+
+[10/21/2023 18:55] cupojoseph
+It's used in different places for different purpose - I don't know where you're looking but possibly change in a balance or tax/stability fee owed over time?
+
+{Reactions}
+👍 
+
+[10/21/2023 19:02] debofx
+I have some variables that I would please like descriptions for or can you point me to the documentation for these variables?
+They are:
+Manager address 
+TaxCollector address
+CoinJoin address
+CollateralJoin address
+Dst address
+CType bytes
+LiquidationEngine address
+Thanks.
+
+
+[10/21/2023 19:03] debofx
+Thanks, that is very helpful.
+
+
+[10/21/2023 19:16] daopunk
+most of these can be found in System Contracts section of the docs: https://docs.opendollar.com/system-contracts/core/
+
+{Embed}
+https://docs.opendollar.com/system-contracts/core/
+Core Module | Open Dollar Docs
+Handling SAFE state, liquidations and accounting (surplus & bad debt)
+
+{Reactions}
+king 👍 
+
+[10/21/2023 19:17] daopunk
+can also check out the diagram: https://www.figma.com/file/5GL7lVwqNeNKIcANCgCJjl/GEB-Diagram-Share?type=whiteboard&node-id=0-1&t=2F2TgUTuGGl5QhQi-0
+
+
+[10/21/2023 19:18] daopunk
+for the rest: 
+Manager is short for SafeManager
+Dst = destination
+cType is bytes32("WETH") for example
+
+{Reactions}
+king 👍 
+
+[10/21/2023 19:19] cupojoseph
+https://github.com/open-dollar/od-contracts/blob/v1.5.5-audit/script/GoerliContracts.s.sol
+Check out the list of addresses in the last deployment here if you want the actual addresses.
+
+ctypes bytes is just a ctype being passed since its a data structure, you can find the interface or examples in the deploment params called `collateralTypes`
+
+{Reactions}
+👍 
+
+[10/21/2023 20:00] nmirchev8
+Is it possible for a user to deposit some collateral and generate debt without safe and later link his position to safe and nft?
+
+
+[10/21/2023 20:05] pi0neerpat
+All actions are tied to a safe.
+
+{Reactions}
+✅ 
+
+[10/21/2023 20:06] pi0neerpat
+So you must perform the action on a safe. There is no ability to just deposit into the protocol and withdraw debt
+
+{Reactions}
+✅ 
+
+[10/21/2023 20:07] 0xhelium
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-8966E.png
+
+
+[10/21/2023 20:08] 0xhelium
+this is the page i get when i click on view repo on the contest page
+
+
+[10/21/2023 20:08] 0xhelium
+there is no code in here
+
+
+[10/21/2023 20:08] 0xhelium
+how am i supposed to link to code into my reports
+
+
+[10/21/2023 20:08] 0xhelium
+?
+
+
+[10/21/2023 20:13] nmirchev8
+From their official repo I guess. (from which you clone it)
+
+{Reactions}
+👍 
+
+[10/21/2023 21:34] debofx
+What does the delegateCall modifier do?
+
+
+[10/21/2023 23:01] mosharaf
+Make sure that the call is a delegatecall.  Otherwise revert
+
+{Reactions}
+👍 
+
+[10/22/2023 00:32] cupojoseph
+how could you make a report if you havent found the code yet :CatConfused:
+
+{Reactions}
+😂 (7) ohno 
+
+[10/22/2023 00:36] 0xdemonnn
+send a FR @cupOjoseph
+
+
+[10/22/2023 00:38] cupojoseph
+https://github.com/open-dollar/od-contracts/blob/f4f0246bb26277249c1d5afe6201d4d9096e52e6/src/contracts/proxies/actions/CommonActions.sol#L125
+enforces that a function must be called via delegate call
+
+{Embed}
+https://github.com/open-dollar/od-contracts/blob/f4f0246bb26277249c1d5afe6201d4d9096e52e6/src/contracts/proxies/actions/CommonActions.sol
+od-contracts/src/contracts/proxies/actions/CommonActions.sol at f4f...
+Open Dollar stablecoin contracts - forked from HAI - open-dollar/od-contracts
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/od-contracts-F81F8
+
+{Reactions}
+👍 
+
+[10/22/2023 05:00] mrosas
+@cupOjoseph pm
+
+
+[10/22/2023 06:09] mrosas
+Am I right to say that each users has their own vault?
+
+
+[10/22/2023 06:47] 0xlemon
+https://discord.com/channels/810916927919620096/1162418959413432330/1164954019857440900
+
+
+[10/22/2023 08:32] al_qa_qa
+In `AccountingEngine::popDebtFromQueue` anyone can call the function, and remove the debt from the queue. What is the point of this? This is also for these functions too `AccountingEngine::settleDebt` and  `AccountingEnginecancelAuctionedDebtWithSurplus` .
+
+
+[10/22/2023 09:00] 0xauditism
+What range of value should we expect for `ISAFEEngine(_safeEngine).cData(_cType).accumulatedRate;` ?
+
+
+[10/22/2023 09:07] hex.byte
+Hey @pi0neerpat | Open Dollar , sent you a fr to clear some doubts about a function flow. Can you please accept it as soon as you see this?
+
+
+[10/22/2023 11:29] 0xkarl98
+why the _ok is of type uint256 instead of a boolean >?
+
+
+[10/22/2023 11:39] 0xauditism
+where ? maybe it is to save gas
+
+
+[10/22/2023 11:40] 0xkarl98
+if you search keyword _ok inside scope files , there are many
+
+
+[10/22/2023 11:41] 0xkarl98
+like this one  ,
+
+mapping(address _owner => mapping(uint256 _safeId => mapping(address _caller => uint256 _ok))) public safeCan
+
+
+[10/22/2023 11:46] 0xauditism
+not sure yet, I don't know how are these mappings and functions being used
+
+
+[10/22/2023 12:52] delvir0
+So the join and exit function both require you having either systemCoins or internalCoins. Where is the starting point which gives the user either one of those?
+
+
+[10/22/2023 13:12] al_qa_qa
+@pi0neerpat | Open Dollar Any help OpenDollar team ?
+
+
+[10/22/2023 14:46] hex.byte
+Read the readme lol
+
+{Reactions}
+😂 
+
+[10/22/2023 14:50] hex.byte
+lol, have a good day
+
+{Reactions}
+😂 (3) 
+
+[10/22/2023 17:32] 0xprinc
+sus
+
+
+[10/22/2023 17:36] 0xprinc
+btw 
+```
+ODProxy(_userRegistry[_user]).OWNER() != _user
+```
+Why is this included in `_isNotProxy()` function.
+I think this condition will never occur as OWNER is set at the starting and is immutable so this condition is never be true.
+
+
+[10/22/2023 18:11] 0xnirlin
+:fbimonka:
+
+{Reactions}
+😄 (5) 
+
+[10/22/2023 19:03] pi0neerpat
+It’s Sunday here so most of us are resting. I’ll try to answer as much as I can
+
+
+[10/22/2023 19:04] pi0neerpat
+Pop debt from queue - The requirements for this are that the debt auction is completed, so this is essentially a cleanup task that people can perform and earn a reward for doing so
+
+{Reactions}
+👍 
+
+[10/22/2023 19:04] pi0neerpat
+You can find all the rewarded tasks in the jobs folder
+
+
+[10/22/2023 19:08] pi0neerpat
+I believe all the internal accounting is is RAY
+
+
+[10/22/2023 20:38] cupojoseph
+If you think its a waste of gas that could be a report
+
+
+[10/22/2023 21:06] cupojoseph
+depositing or borrowing will give them internal balances
+check out the basic actions, which the user starts with through their ODProxy
+
+
+[10/23/2023 02:24] 0xauditism
+Yes it is in ray, but what can we expect `_rate` to usually be ?
+
+
+[10/23/2023 02:40] 0xauditism
+Thank you for being available over the week end !
+
+
+[10/23/2023 03:52] cupojoseph
+if you mean this `_rate`: https://github.com/open-dollar/od-contracts/blob/67e5917e7dc0c16324aff3fde0298cd218a15152/src/contracts/proxies/actions/BasicActions.sol#L37
+
+its getting that from `_safeEngine` so we can check out the current deployment of the safe engine here: https://goerli.arbiscan.io/address/0x32474e5Cf3452DFCc6ca340600cAC1f78C9aF733#code
+and query it directly to test the result and see how many digits it has
+
+or the natspec comments can be helpful in the getter functions and structs to know the units:
+(from `ISAFEEngine.sol`): https://github.com/open-dollar/od-contracts/blob/67e5917e7dc0c16324aff3fde0298cd218a15152/src/interfaces/ISAFEEngine.sol#L173
+
+```javascript
+  struct SAFEEngineCollateralData {
+    // Total amount of debt issued by the collateral type
+    uint256 /* WAD */ debtAmount;
+    // Total amount of collateral locked in SAFEs using the collateral type
+    uint256 /* WAD */ lockedAmount;
+    // Accumulated rate of the collateral type
+    uint256 /* RAY */ accumulatedRate;
+    // Floor price at which a SAFE is allowed to generate debt
+    uint256 /* RAY */ safetyPrice;
+    // Price at which a SAFE gets liquidated
+    uint256 /* RAY */ liquidationPrice;
+  }
+```
+So accumulated rate is expected n RAY units
+
+{Reactions}
+❤️ 
+
+[10/23/2023 03:53] cupojoseph
+hope that helps! 😁
+
+
+[10/23/2023 06:19] 0xauditism
+Thank you, didn't think about looking at the deployed contract
+
+
+[10/23/2023 10:52] 0xbtk
+@pi0neerpat | Open Dollar dmed you in a private thread
+
+
+[10/23/2023 11:10] al_qa_qa
+- `AccountingEngine` functions are called by `BasicActions`
+- `BasicActions` restricts calling to be delegateCall
+- `ODProxy` DelegateCall to `BasicActions` , then it calls the functions in the `AccountingEngine` in the context of `ODProxy` 
+
+Is this context correct? @pi0neerpat | Open Dollar
+
+{Reactions}
+☝️ (2) 
+
+[10/23/2023 11:21] honeymewn
+is there any doc on accounting engine?
+what is it supposed to do?
+
+
+[10/23/2023 11:25] al_qa_qa
+Check this article:
+https://docs.opendollar.com/system-contracts/core/accounting-engine
+
+{Embed}
+https://docs.opendollar.com/system-contracts/core/accounting-engine
+Accounting Engine | Open Dollar Docs
+The protocol's accountant, keeping track of surplus and deficit
+
+{Reactions}
+👍 (2) 
+
+[10/23/2023 13:03] t1moh
+What is internalCoin?
+
+
+[10/23/2023 13:08] cupojoseph
+Yes you got it
+
+{Reactions}
+👍 
+
+[10/23/2023 13:10] cupojoseph
+Because of the PID controller and the repricing of debt the accounting engine is needed to keep track of the surplus and settle the debt with the taxes to calculate the surplus. Our primary change to the accounting engine is changing how the surplus fees flow to sending some of them to the surplus auction house and sending some to an external address which is the DOA Treasury
+
+
+[10/23/2023 13:10] cupojoseph
+Internal units of account
+
+
+[10/23/2023 13:31] mrpotatomagic
+@cupOjoseph dmed
+
+
+[10/23/2023 13:34] 0xsorrynotsorry
+Dm'ed @cupOjoseph
+
+
+[10/23/2023 15:43] nmirchev8
+Hey.
+CamelotRelayer would be deployed with OD as base token and any collat as quoteToken?
+
+
+[10/23/2023 16:36] 0xprinc
+@cupOjoseph dmed you ser
+
+
+[10/23/2023 18:04] daopunk
+yeah. we plan to use WETH in production
+
+{Reactions}
+✅ 
+
+[10/23/2023 19:49] cupojoseph
+hey all thanks for all the questions and and good work this weekend. We're entering the final 48 hours of the audit! If you're still waiting on a question please just ping us again in case we lost anything in the sea of DMs 🌊 
+
+Good luck in the final hours!
+
+{Reactions}
+🚀 (3) 
+
+[10/24/2023 04:31] 0xarav
+Hey joseph , Ive got a question. sent a req
+
+
+[10/24/2023 06:03] 8olidity
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-6EE90.png
+
+
+[10/24/2023 07:13] kawaicho
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-7CCE1.png
+
+{Reactions}
+😟 
+
+[10/24/2023 07:43] 0xarshia
+Bros doing CEO to writing colored texts head to toe all running by himself.:hi5:
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-CAD47.png
+
+{Reactions}
+🫡 
+
+[10/24/2023 07:44] 0xarshia
+Respect
+
+
+[10/24/2023 08:35] rahiti
+Hello, from a user point of view, how is the function `allowSAFE()` in `ODSafeManager.sol` supposed to be executed ? What is the workflow ?
+
+
+[10/24/2023 08:38] al_qa_qa
+- It Checks that the caller (msg.sender), is allowed to modify this safe.
+- Then it gives the access to the `_user` address sent as a parameter, to control the safe too.
+
+
+[10/24/2023 08:39] rahiti
+I meant, should you go through the proxy to call the `allowSAFE()` function or call it directly ?
+
+
+[10/24/2023 08:45] al_qa_qa
+- Proxy delegatecalls the functions, so if you call a function from another contract it will affect Proxy context, not the contract itself.
+- `ODProxy` delegatecall to Action contracts like `BasicAction.sol` , this contracts don't change the context, you will find that these contracts fires another contract `ODSafeManager` as example functions.
+- The point for delegatecall is to preserve msg.sender only, not else.
+- You can't fire the function directly without proxies (since proxies are the owners), and proxy can only delegatecall, so in order to change you need to execute functions that make external calls to the `ODSafeManger` contract like `BasicAction`
+
+
+[10/24/2023 09:28] stormreckson
+From what I understand the owner of the safe can call this the `allowSAFE` ..prior to the call the owner whould have called `build` to get a proxy then `allowSAFE` can be called on the `_usr` (the user must also be a proxy account) if a user is added to the safeCan mapping then they can also call the function ... So I think it's actually through the proxy.... I might be wrong, I'm open to corrections.
+
+
+[10/24/2023 09:35] 0xauditism
+anyone knows what is wrong here ? how to fix it
+
+
+[10/24/2023 09:45] rahiti
+That is what I understood as well, I might be doing something wrong in my test script
+Thanks for the answer 😉
+
+{Reactions}
+👍 
+
+[10/24/2023 09:45] rahiti
+Got it, thank you 😛
+
+{Reactions}
+👍 
+
+[10/24/2023 10:24] 0xarshia
+everyone asking question about SafeManagment But what SAFE even is and suppose to do what? How users create or own SAFE's (im not talking about safe engine)
+
+
+[10/24/2023 10:27] 0xarshia
+@Al-Qa-qa  can you please explain that bro Thanks.
+
+
+[10/24/2023 11:02] coffiasd
+here safe means safe AA wallet ?
+
+
+[10/24/2023 11:07] al_qa_qa
+SAFE is the collateral-dept position.
+
+As I understood, SAFE is the collateral paid by users to mint new tokens, like MakerDAO. But instead of giving the users the ownership, Open Dollar team makes these SAFEs owned by Vault721 NFT. And this NFTs are owner by the the proxies, that is being deployed when minting to the owner address. I know its kind of a long way, but this is the codebase.
+
+When the user open new SAFE, it means there are new tokens to mint. the SAFE contain the tokens in collateral and the minted tokens (dollars). and since the price changes, the SAFE collateral may be less that the dollars value, or vice versa.
+
+You don't need to understand how this process warks, since its out of the audit scope, and this code isbeing audited from OpenZeppelin, so its secure.
+
+{Reactions}
+👍 
+
+[10/24/2023 11:07] al_qa_qa
+Try to add the environmental variables in the `.env` file.
+
+```
+MAINNET_RPC=https://arbitrum-one.publicnode.com
+GOERLI_RPC=https://arbitrum-goerli.publicnode.com
+```
+
+
+[10/24/2023 11:21] 0xarshia
+thanks bro
+
+{Reactions}
+👍 
+
+[10/24/2023 12:15] mrudenko
+@pi0neerpat | Open Dollar sent dm
+
+
+[10/24/2023 13:24] m4k2
+Hi, a dev is available ?
+
+
+[10/24/2023 13:34] slavcheww
+Dm'ed @huntrr
+
+{Reactions}
+🫡 
+
+[10/24/2023 13:45] al_qa_qa
+You can send the message, and if we can help, we will.
+
+
+[10/24/2023 13:47] cupojoseph
+No.
+
+
+[10/24/2023 13:47] cupojoseph
+If you are confused about what safe means I suggest watching the intro video linked in the code arena repo. It has a brief overview of the contracts
+
+
+[10/24/2023 13:48] cupojoseph
+Great summary!
+
+{Reactions}
+👍 
+
+[10/24/2023 13:51] cupojoseph
+Appreciate it! Our team is working hard to help everyone be effective.
+
+
+[10/24/2023 13:53] cupojoseph
+If we've missed your question please just ping again to bring to the top. Thanks everyone!
+
+{Reactions}
+🔥 
+
+[10/24/2023 13:55] m4k2
+I would like to go private
+
+
+[10/24/2023 13:59] baice8614
+I got 
+```Solc Error: 
+error Command failed with exit code 1.```
+
+every time when I use `forge build` /  `yarn build`,  and wanna to compile the contracts ....
+
+
+[10/24/2023 14:00] baice8614
+what is the problem .... ?
+
+
+[10/24/2023 14:10] al_qa_qa
+You can DM me
+
+{Reactions}
+🤝 
+
+[10/24/2023 14:18] m4k2
+Btw, this figma part is rekt :
+
+
+[10/24/2023 14:18] m4k2
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/image-0E5C8.png
+
+
+[10/24/2023 14:32] daopunk
+which link was that? we hav a few figmas floating around
+
+
+[10/24/2023 14:34] m4k2
+the one on  C4 : https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v1?type=design&node-id=0%3A1&mode=design&t=tR5NcHdXGTHys5US-1
+
+{Embed}
+https://www.figma.com/file/g7S9iJpEvWALcRN0uC9j08/Open-Dollar-Diagram-v1?type=design&node-id=0%3A1&mode=design&t=tR5NcHdXGTHys5US-1
+Open Dollar Diagram v1
+Created with Figma
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/thumbnail-B0B15
+
+
+[10/24/2023 15:04] daopunk
+oh yeah, i see now. that part should be deleted
+
+
+[10/24/2023 15:08] rahiti
+I'd like to give allowance to another user (user B) so he can access a safe. I understood that in order to do that, user A has to go throught his proxy to execute a function on the `BasicActions.sol` contract. That is what I've done to `openSAFE()` for user A.
+But now, I can't find the right function in `BasicActions.sol` that would allow me to execute `allowSAFE()` on the `ODSafeManager`.
+Can you tell me more about it please ?
+
+
+[10/24/2023 15:23] cupojoseph
+You don't need a basic action to call allowSafe, you should be able to call it directly with a proxy using execute
+
+
+[10/24/2023 15:36] al_qa_qa
+Are you sure for this answer 🤔?
+
+Delegatecall don't change the context of the target contract. so if it is called as you said, nothing will changes. in `ODSafeManager`.
+
+
+[10/24/2023 16:23] nmirchev8
+Are you spoiling something?
+
+
+[10/24/2023 16:26] al_qa_qa
+Nope
+
+
+[10/24/2023 16:30] klau5_
+sent DM! @cupOjoseph
+
+
+[10/24/2023 16:38] 0xarno
+you should not disclose issues publicly
+
+
+[10/24/2023 16:39] 0xhuy0512
+It's not deploy yet so it's OK
+
+
+[10/24/2023 16:55] 0xarshia
+@cupOjoseph can you please check Dm Thanks
+
+
+[10/24/2023 16:56] al_qa_qa
+I thought @cupOjoseph said this by mistake, as this problem will get clear in unit test. So I thought he replied by a wrong answer not else.
+
+
+[10/24/2023 16:59] 0xarav
+Its ok, I'm sure anyone who spent some time on the code
+would already know this by now
+
+
+[10/24/2023 17:51] m4k2
+@cupOjoseph I've DM you
+
+
+[10/24/2023 18:37] m4k2
+or if any other devs is available ?
+
+
+[10/24/2023 20:45] pi0neerpat
+Only 1 more day left. Love to see the amount of smart people here looking at our code!
+
+{Reactions}
+hi5 (3) 
+
+[10/24/2023 20:45] pi0neerpat
+My DMs are flooded 😄
+
+
+[10/24/2023 21:21] nethoxa
+Hey
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/Screenshot_20231024_231849_Chrome-96679.jpg
+
+
+[10/24/2023 21:22] nethoxa
+Who did have that idea
+
+
+[10/24/2023 21:22] nethoxa
+I want him to come out 🤣🤣🤣🤣
+
+
+[10/24/2023 21:25] nethoxa
+https://tenor.com/view/one-job-you-had-one-job-loki-fail-gif-21911643
+
+{Embed}
+https://tenor.com/view/one-job-you-had-one-job-loki-fail-gif-21911643
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/one-job-you-had-one-job-1F2D4.png
+
+
+[10/24/2023 22:32] pi0neerpat
+interesting, does this change the return from getSafesData
+
+
+[10/24/2023 22:33] pi0neerpat
+I'm not sure if we are even using that function anywhere
+
+
+[10/24/2023 22:37] nethoxa
+Is that a question?
+
+
+[10/24/2023 22:37] nethoxa
+I wrote it just because I found it funny
+
+
+[10/24/2023 22:37] nethoxa
+Wdym?
+
+
+[10/24/2023 23:20] pi0neerpat
+Is it not supposed to be i++ ? whats funny?
+
+
+[10/25/2023 04:03] phoenixv110
+How is Vault721.sol contract getting deployed? Is it getting deployed by another contract?
+
+
+[10/25/2023 07:54] nmirchev8
+Is SafeEngine responsible for tracking a debt/collateral ration of a user and initiate a liquidateion?
+
+
+[10/25/2023 08:28] nethoxa
+From what I remember, it is just a variable name, so it does not really matter which one you use. It was funny because `i++` is like an universal thing everyone uses since they start programming  and i showed it to friends and they were like
+
+
+[10/25/2023 08:28] nethoxa
+https://tenor.com/view/no-god-please-no-no-please-no-no-god-no-yelling-gif-26334010
+
+{Embed}
+https://tenor.com/view/no-god-please-no-no-please-no-no-god-no-yelling-gif-26334010
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/no-god-please-no-no-28C6C.png
+
+
+[10/25/2023 09:23] xariextz
+I dropped a question in my private thread
+
+
+[10/25/2023 09:24] xariextz
+@pi0neerpat | Open Dollar @cupOjoseph  @huntrr
+
+
+[10/25/2023 09:25] 0xprinc
+dmed @pi0neerpat | Open Dollar @huntrr @cupOjoseph 
+with my doubts please reply
+
+{Reactions}
+🫡 
+
+[10/25/2023 09:32] viraz4331
+dm'ed @pi0neerpat | Open Dollar @huntrr as well on the pvt thread
+
+{Reactions}
+⚔️ 
+
+[10/25/2023 11:49] slavcheww
+dmed @huntrr
+
+{Reactions}
+🦾 
+
+[10/25/2023 13:52] mrpotatomagic
+@huntrr dmed
+
+{Reactions}
+👌 
+
+[10/25/2023 15:52] blckhv
+someone who was able to execute the tests in E2E.t.sol file?
+
+
+[10/25/2023 15:55] slavcheww
+dmed @cupOjoseph @pi0neerpat | Open Dollar @huntrr
+
+
+[10/25/2023 19:31] c145h
+any staff here? how can I withdraw my analysis?
+
+
+[10/25/2023 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺wardens The **Open Dollar** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the audit is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a Contest-Admin if you have questions along the way!
+
+
+[10/25/2023 20:05] pascal9476
+Backstage boys how many submissions on this one ?
+
+
+[10/25/2023 21:04] cupojoseph
+Audit complete 💪 Thanks so much to everyone who contributed. You are all incredible!
+
+{Reactions}
+🔥 (3) 
+
+[10/25/2023 21:05] cupojoseph
+I'll be sure to share as soon as we know. Code4rena needs time to compile and throw out bogus ones so we will know in a few days is my guess, but not sure.
+
+
+[10/25/2023 21:12] t1moh
+Only 429
+
+{Reactions}
+🫠 (4) 🫡 (2) 
+
+[10/25/2023 22:56] its_basu
+you are being sarcastic right 🥲?
+
+
+[10/25/2023 22:56] t1moh
+Nope, I would say nowadays it's low bound
+
+
+[10/25/2023 23:35] 0xdemonnn
+Thank you team @cupOjoseph @huntrr @pi0neerpat | Open Dollar  :hi5:
+
+{Reactions}
+🤝 
+
+[10/26/2023 00:43] 0xarav
+Thanks team for being here
+
+
+[10/26/2023 05:33] arie71.
+It was
+
+
+[10/26/2023 05:49] 0xlemon
+Thanks to the team for always answering!🙏
+
+
+[10/26/2023 07:30] nmirchev8
+Having in mind all other contests,  again it is a lot
+
+
+[10/26/2023 09:40] m4k2
+Typically, what is the number of reports?
+
+
+[10/26/2023 10:15] nmirchev8
+I would say around 700-800, but I am also new
+
+{Reactions}
+🤝 (2) 
+
+[10/26/2023 15:16] pi0neerpat
+On behalf of the entire Open Dollar team we’d like to express our sincere thanks and gratitude for all your contributions during our audit event with Code4rena. Your talents have helped make our protocol better, more secure, and given us valuable insights we’re grateful to take onboard.  🫶
+
+We’d like to invite you to join our [Official Discord](https://opendollar.com/discord) to stay in touch for **future opportunities, bounties, and developer programs** we are planning. 🛠️ 
+
+Exclusively for participants of this event, we’re also awarding the special Discord role of “Open Audit Contributor”, simply in our town square say "code4rena" and our Community Manager @llihwerd / Drew / Drew will get you set up!
+
+If you have any more questions, suggestions, or comments, please let us know. Thanks again for your incredible work!
+
+Best regards,
+The Open Dollar Team
+
+{Embed}
+https://opendollar.com/discord
+Open Dollar Discord
+Borrow against Liquid Staking Tokens & Arbitrum native assets with our flexible and transparently over-collateralized stablecoin.
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/64dbe40e67cc6cf8f5291cef_og-image-93A7C.png
+
+{Reactions}
+🔥 (15) 
+
+[11/14/2023 11:30] 0xarno
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/depressed-bored-628F0.mp4
+
+{Reactions}
+wojakpointing 👍 
+
+[11/14/2023 12:33] wei3erhase
+https://tenor.com/view/sad-pablo-lonely-alone-gif-12928789
+
+{Embed}
+https://tenor.com/view/sad-pablo-lonely-alone-gif-12928789
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/sad-pablo-lonely-3D09B.png
+
+{Reactions}
+👍 (2) 
+
+[11/14/2023 16:16] thebrittfactor
+https://tenor.com/view/gif-gif-19495021
+
+{Embed}
+https://tenor.com/view/gif-gif-19495021
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/gif-50E9B.png
+
+
+[11/14/2023 16:18] crc32#4377
+No wait, I'm not ready 🤣
+
+{Reactions}
+🤣 (2) 
+
+[11/14/2023 16:20] thebrittfactor
+🤑 🎉  Awards for **Open Dollar**:
+
+$2,698.44 USDC » @hals 
+$2,583.24 USDC » @MrPotatoMagic 
+$2,468.82 USDC » @yashar 
+$2,455.70 USDC » @klau5 
+$2,356.65 USDC » @nmirchev8 
+$2,000.24 USDC » Saintcode_ 
+$1,943.13 USDC » @T1MOH 
+$1,773.47 USDC » @Falconhoof 
+$700.75 USDC » @0xhuy0512 
+$600.07 USDC » @Haipls 
+$524.08 USDC » @kutu 
+$458.63 USDC » @hunter_w3b 
+$431.05 USDC » @immeas 
+$419.75 USDC » @ZanyBonzy 
+$414.58 USDC » @0xprinc 
+$352.80 USDC » fouzantanveer 
+$341.16 USDC » @twicek 
+$308.92 USDC » 0x6d6164616e 
+$300.52 USDC » @perseus 
+$294.01 USDC » @twcctop 
+$266.87 USDC » Baki (@supernova and @Viraz)
+$239.77 USDC » @Tendency 
+$234.83 USDC » pep7siup 
+$232.59 USDC » @Arz 
+$226.39 USDC » lsaudit 
+$205.39 USDC » COSMIC-BEE-REACH (@Arno, @solsaver  and @pxng0lin)
+$188.94 USDC » Krace 
+$180.40 USDC » @0xhacksmithh 
+$166.26 USDC » xAriextz 
+$144.51 USDC » @bitsurfer 
+$142.76 USDC » @spark
+$139.35 USDC » @josephdara 
+$130.38 USDC » @btk 
+$120.09 USDC » phoenixV110 
+$102.21 USDC » @nican0r 
+$100.13 USDC » @0xVolcano
+
+
+[11/14/2023 16:21] thebrittfactor
+$94.01 USDC » @mrudenko 
+$90.07 USDC » @0xPsuedoPandit 
+$86.33 USDC » @Stormreckson⛈ 
+$80.26 USDC » @ni8mare 
+$70.45 USDC » @Kaysoft 
+$62.49 USDC » @fibonacci 
+$62.49 USDC » @0xMosh 
+$54.19 USDC » holydevoti0n 
+$54.11 USDC » @JCK 
+$45.44 USDC » Bughunter101 
+$45.16 USDC » @Beosin 
+$41.97 USDC » @0xbrett8571 
+$41.97 USDC » Myd 
+$41.97 USDC » @0xweb3boy 
+$41.97 USDC » wei3erHase 
+$41.97 USDC » @SAAJ 
+$41.97 USDC » jauvany 
+$41.97 USDC » clara 
+$37.14 USDC » @merlin 
+$37.14 USDC » @HChang26 
+$33.90 USDC » 0xmystery 
+$30.30 USDC » @m4k2 
+$28.60 USDC » @0xAadi 
+$26.07 USDC » 0xWaitress 
+$26.07 USDC » @cryptoThemeX 
+$26.07 USDC » 0xsurena 
+$26.07 USDC » @niki 
+$22.00 USDC » @0xlemon 
+$22.00 USDC » Greed 
+$22.00 USDC » @ge6a 
+$22.00 USDC » @auditism 
+$12.14 USDC » @nailkhalimov 
+$12.14 USDC » @unique 
+$12.14 USDC » @dharma09 
+$12.14 USDC » @naman1778 
+$12.14 USDC » @0x11singh99 
+$11.00 USDC » @0xDemon 
+$8.30 USDC » @eeshenggoh 
+$8.30 USDC » 8olidity 
+$8.30 USDC » @Al-Qa-qa 
+$8.30 USDC » @okolicodes
+
+🏁 Findings summary
+--------------------------------------
+High risk findings: 2 unique (14 total)
+Med risk findings: 15 unique (102 total)
+Gas reports: 8 (Best: 0xVolcano)
+QA reports: 25 (Best: MrPotatoMagic)
+Advanced analysis reports: 11 (Best: hunter_w3b)
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+👍 (6) 🔥 (2) 
+
+[11/14/2023 16:22] nmirchev8
+Daaaaaaim
+
+
+[11/14/2023 16:23] mosharaf
+Whoaa
+
+
+[11/14/2023 16:25] m4k2
+lets go
+
+
+[11/14/2023 16:27] milotruck
+Congrats everyone!
+
+{Reactions}
+❤️ (16) ✅ (3) 
+
+[11/14/2023 16:28] .akira0327
+Was there solo finding for high risk one?
+
+
+[11/14/2023 16:28] zdravkohr
+That means there are 2 findings with 12 dups
+
+
+[11/14/2023 16:30] 0xtendency
+You did great ser.
+Thank you for judging :hi5:
+
+{Reactions}
+❤️ 
+
+[11/14/2023 16:30] mosharaf
+No unique ig. Rewards distribution looks steady
+
+
+[11/14/2023 16:30] 0xhuy0512
+there're 4 solo medium in this contest
+
+
+[11/14/2023 16:33] klau5_
+How can you know which one is solo issue? I have repository access but I don't know...
+
+
+[11/14/2023 16:34] 0xhuy0512
+if issue #300 has `primary issue` tag, I will check the `duplicate-300` tag
+
+{Reactions}
+thankyou 🔥 
+
+[11/14/2023 16:38] 0xdemonnn
+🫡
+
+
+[11/14/2023 16:38] saint6704
+Super fast judging ser 🙏
+
+
+[11/14/2023 16:39] saint6704
+@Tendency congratulations🎉🥳🎉
+
+{Reactions}
+🙏 
+
+[11/14/2023 16:40] 0xtendency
+Thank you ser, congrats as well
+
+{Reactions}
+❤️ 
+
+[11/14/2023 16:48] cupojoseph
+Congrats everyone, excellent work. All the rewards are well earned!! Thank you for participating in our audit! 💙
+
+{Reactions}
+👍 (5) 🔏 (4) 
+
+[11/14/2023 16:49] al_qa_qa
+You are welcome sir
+
+
+[11/14/2023 17:34] 0xhals
+wow #1 🤯 ! 
+thx a lot :code4rena: 🔥
+
+{Reactions}
+🔥 (2) 
+
+[11/14/2023 18:07] ding0077
+Congratulations @hals  🔥
+
+{Reactions}
+thankyou 🙏 🔥 (2) 
+
+[11/14/2023 19:26] yashar0x
+Third Contest, Third Place 💪 
+Congrats everyone
+And thanks to the Open Dollar team @cupOjoseph @huntrr 🫡
+
+{Reactions}
+🫡 (2) hi5 (2) 
+
+[11/14/2023 19:26] t1moh
+Out of top 5 as always😅
+
+
+[11/15/2023 01:11] 0xsimeon
+Congratulations @josephdara and @okolicodes
+
+{Reactions}
+❤️ (2) bolt_discord_emoji 
+
+[11/15/2023 07:29] viraz4331
+Congrats all 🙂
+
+
+[11/15/2023 08:01] 0xdemonnn
+🫡
+
+
+[11/15/2023 09:27] 0xbtk
+Shouldn't disclose any vuln until the report is made public
+
+{Reactions}
+👌 thankyou 
+
+[12/23/2023 01:42] cupojoseph
+https://code4rena.com/reports/2023-10-opendollar
+
+{Embed}
+https://code4rena.com/reports/2023-10-opendollar
+Code4rena
+Code4rena is a competitive audit platform that finds more high-severity vulnerabilities, more quickly than any other auditing method.
+Code4rena - ARCHIVE-Q4-2023 - opendollar-oct18 [1162418959413432330].txt_Files/c4-og-banner-D1683.png
+
+{Reactions}
+🤝 
+
+[02/24/2024 02:45] itsmetechjay
+ℹ️ This channel is pending archive.  As a result, any private threads will be permanently deleted on Saturday, 02 March 2024. Please make sure to grab anything you might need from those before then.
+
+
+[02/29/2024 22:34] itsmetechjay
+ℹ️ Reminder: this channel will be deleted in 24 hours.
+
+
+==============================================================
+Exported 333 message(s)
+==============================================================
